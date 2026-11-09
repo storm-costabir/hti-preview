@@ -1,0 +1,1987 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact HTI India — Hospitality Training Institute</title>
+  <meta name="description" content="Get in touch with HTI India on WhatsApp, phone or email. We reply within a few hours. Book a hospitality training program today." />
+  <link rel="canonical" href="https://www.hti-india.com/contact.html" />
+  <script>(function(l){var p=l.pathname;if(p!=="/"&&!/\.html$/.test(p)&&!/\/$/.test(p))l.replace(p+".html"+l.search+l.hash)})(location)</script>
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Contact HTI India — Hospitality Training Institute" />
+  <meta property="og:description" content="Get in touch with HTI India on WhatsApp, phone or email. We reply within a few hours. Book a hospitality training program today." />
+  <meta property="og:url" content="https://www.hti-india.com/contact.html" />
+  <meta property="og:image" content="https://www.hti-india.com/images/og/contact.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Contact HTI India - hospitality training enquiries answered within hours" />
+  <meta property="og:site_name" content="HTI India" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact HTI India — Hospitality Training Institute" />
+  <meta name="twitter:description" content="Get in touch with HTI India on WhatsApp, phone or email. We reply within a few hours. Book a hospitality training program today." />
+  <meta name="twitter:image" content="https://www.hti-india.com/images/og/contact.jpg" />
+  <link rel="icon"
+    href="images/brand/hti-favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --hti-bg: #ede9e3;
+      --hti-black: #000;
+      --hti-red: #e8191a;
+      --hti-red2: #e8191a;
+      --hti-text: #111;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      background: var(--hti-bg);
+      color: var(--hti-text);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-weight: 700;
+      line-height: 1.15;
+    }
+
+    /* ============ NAVBAR ============ */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--hti-bg);
+    }
+
+    .navbar::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #000, transparent);
+      transition: opacity .25s ease;
+    }
+
+    /* static line hides once the scroll progress line takes over */
+    .navbar.scrolled::after {
+      opacity: 0;
+    }
+
+    /* ---------- Scroll progress line (sits under the navbar) ---------- */
+    .scroll-progress {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(to right, var(--hti-red, #e32129), var(--hti-red2, #ff0000));
+      transform: scaleX(0);
+      transform-origin: left center;
+      opacity: 0;
+      transition: opacity .25s ease;
+      will-change: transform;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .navbar.scrolled .scroll-progress {
+      opacity: 1;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 72px;
+    }
+
+    .nav-logo img {
+      width: 52px;
+      height: auto;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+    }
+
+    .nav-item {
+      position: relative;
+      font-weight: 600;
+      font-size: 15px;
+      color: #111;
+      cursor: pointer;
+      padding: 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-item .caret {
+      width: 8px;
+      height: 8px;
+      border-right: 2px solid #333;
+      border-bottom: 2px solid #333;
+      transform: rotate(45deg);
+      margin-top: -3px;
+      transition: transform .2s;
+    }
+
+    .nav-item:hover .caret {
+      transform: rotate(-135deg);
+      margin-top: 3px;
+    }
+
+    .dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, .14);
+      padding: 10px;
+      min-width: 230px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all .2s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      z-index: 120;
+    }
+
+    .nav-item:hover .dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown a {
+      padding: 9px 12px;
+      border-radius: 7px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #222;
+    }
+
+    .dropdown a:hover {
+      background: var(--hti-bg);
+      color: var(--hti-red);
+    }
+
+    .dropdown a.active-nav {
+      color: #e8191a;
+      font-weight: 700;
+    }
+
+    .dropdown a b {
+      display: block;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .dropdown a span {
+      font-size: 12px;
+      color: #777;
+      font-weight: 400;
+    }
+
+    .nav-contact {
+      background: var(--hti-red);
+      color: #fff;
+      border-radius: 8px;
+      padding: 11px 22px;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .nav-contact:hover {
+      background: #c40f10;
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    .nav-toggle span {
+      width: 26px;
+      height: 2px;
+      background: #000;
+      display: block;
+      transition: transform .25s ease, opacity .2s ease;
+    }
+
+    /* while the menu is open the hamburger becomes a cross, so there is an
+       obvious way to close it - and it sits in the sticky header, so it stays
+       reachable even when the menu panel is scrolled */
+    .nav-toggle.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .nav-toggle.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav-toggle.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* ============ MARQUEE ============ */
+    .marquee {
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+    }
+
+    .marquee-track {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      animation: scroll-left var(--dur, 40s) linear infinite;
+    }
+
+    .marquee:hover .marquee-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes scroll-left {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* ============ HERO ============ */
+    .contact-hero {
+      padding: 70px 24px 30px;
+      text-align: center;
+    }
+
+    .contact-hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      color: #111;
+      margin-bottom: 10px;
+    }
+
+    .contact-hero h2 {
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 16px;
+    }
+
+    .contact-hero p {
+      max-width: 680px;
+      margin: 0 auto;
+      color: #555;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* ============ CONTACT CARDS ============ */
+    .contact-cards {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 40px 24px 60px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .contact-card {
+      background: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .c-icon {
+      width: 56px;
+      height: 56px;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .c-icon img {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+    }
+
+    .c-icon svg {
+      width: 46px;
+      height: 46px;
+      color: #e31e24;
+    }
+
+    .contact-card h3 {
+      font-size: 20px;
+      font-weight: 800;
+      color: #111;
+      margin-bottom: 8px;
+    }
+
+    .contact-card p {
+      color: #666;
+      font-size: 14.5px;
+      line-height: 1.55;
+      margin-bottom: 14px;
+    }
+
+    .c-detail {
+      font-size: 16px;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 22px;
+    }
+
+    .contact-btn {
+      display: inline-block;
+      background: #e31e24;
+      color: #fff;
+      font-weight: 700;
+      border-radius: 8px;
+      padding: 0.7rem 1.5rem;
+      margin-top: auto;
+      transition: all 0.2s ease;
+    }
+
+    .contact-btn:hover {
+      background: #c40f10;
+    }
+
+    /* ============ ON-PAGE ENQUIRY FORM (saves to Supabase) ============ */
+    .contact-card--form {
+      grid-column: 1 / -1;
+    }
+
+    /* The programme pages link straight here with #efForm. The navbar is
+       sticky, so without this the jump parks the header over the first
+       thing the form has to say. */
+    .ef {
+      scroll-margin-top: 92px;
+      width: 100%;
+      max-width: 920px;
+      margin: 6px auto 26px;
+      text-align: left;
+    }
+
+    /* The line that shows which programme brought someone here. It sits above
+       the first field so it reads as context for the form, not as a field of
+       its own - there is nothing to fill in, it is already recorded. */
+    .ef-about {
+      margin: 0 0 18px;
+      padding: 12px 16px;
+      border-left: 3px solid var(--hti-red);
+      background: #faf6f2;
+      border-radius: 0 8px 8px 0;
+      font-size: 14.5px;
+      line-height: 1.5;
+      color: #3a3a3a;
+      text-align: left;
+    }
+
+    .ef-about b { color: #111; }
+
+    .ef-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      /* no row gap - the reserved error slot below each field is the gap */
+      gap: 0 20px;
+      align-items: start;
+    }
+
+    .ef-field {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    /* Every field that can show an error keeps a permanent slot for it, so the
+       message appearing or clearing never reflows the form under the person
+       typing. Only [data-required] fields carry an .ef-err. */
+    .ef-field[data-required] {
+      position: relative;
+      padding-bottom: 30px;
+    }
+
+    /* the checkbox groups outline themselves when invalid - the slot has to
+       clear that outline as well as the message */
+    .ef-fieldset[data-required] {
+      padding-bottom: 36px;
+    }
+
+    .ef-fieldset {
+      margin-top: 0;
+    }
+
+    .ef-field > label,
+    .ef-legend {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 8px;
+    }
+
+    .ef-req {
+      color: #e31e24;
+    }
+
+    .ef-opt {
+      font-weight: 600;
+      color: #999;
+    }
+
+    .ef-input,
+    .ef-textarea {
+      font-family: inherit;
+      font-size: 15px;
+      color: #111;
+      background: #fff;
+      width: 100%;
+      border: 1.5px solid #dcd8d2;
+      border-radius: 8px;
+      padding: 12px 14px;
+      transition: border-color .18s ease, box-shadow .18s ease;
+    }
+
+    .ef-input::placeholder,
+    .ef-textarea::placeholder {
+      color: #aaa;
+    }
+
+    .ef-input:focus,
+    .ef-textarea:focus {
+      outline: none;
+      border-color: #e31e24;
+      box-shadow: 0 0 0 3px rgba(227, 30, 36, .14);
+    }
+
+    .ef-textarea {
+      min-height: 112px;
+      line-height: 1.5;
+      resize: vertical;
+    }
+
+    .ef-checks {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    /* tap targets stay at 48px+ so the groups are usable on a phone */
+    .ef-check {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      min-height: 48px;
+      padding: 10px 14px;
+      background: #fff;
+      border: 1.5px solid #dcd8d2;
+      border-radius: 8px;
+      font-size: 14.5px;
+      line-height: 1.3;
+      cursor: pointer;
+      transition: border-color .18s ease, background .18s ease;
+    }
+
+    .ef-check input {
+      flex: 0 0 20px;
+      width: 20px;
+      height: 20px;
+      margin: 0;
+      accent-color: #e31e24;
+      cursor: pointer;
+    }
+
+    .ef-check:hover {
+      border-color: #bdb8b1;
+    }
+
+    .ef-check:focus-within {
+      box-shadow: 0 0 0 3px rgba(227, 30, 36, .14);
+    }
+
+    .ef-check:has(input:checked) {
+      border-color: #e31e24;
+      background: #fff5f5;
+    }
+
+    .ef-field.invalid .ef-input,
+    .ef-field.invalid .ef-textarea {
+      border-color: #e31e24;
+      background: #fff7f7;
+    }
+
+    .ef-field.invalid .ef-checks {
+      outline: 1.5px solid #e31e24;
+      outline-offset: 5px;
+      border-radius: 4px;
+    }
+
+    .ef-err {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 7px;
+      font-size: 13px;
+      line-height: 1.35;
+      font-weight: 600;
+      color: #c40f10;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .18s ease;
+    }
+
+    .ef-field.invalid .ef-err {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .ef-hp {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    .ef-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 18px;
+      margin-top: 24px;
+    }
+
+    .ef-submit {
+      font-family: inherit;
+      font-size: 15.5px;
+      font-weight: 700;
+      color: #fff;
+      background: #e31e24;
+      border: 0;
+      border-radius: 8px;
+      padding: .85rem 1.9rem;
+      min-height: 48px;
+      cursor: pointer;
+      transition: background .2s ease, opacity .2s ease;
+    }
+
+    .ef-submit:hover:not(:disabled) {
+      background: #c40f10;
+    }
+
+    .ef-submit:disabled {
+      opacity: .6;
+      cursor: default;
+    }
+
+    .ef-note {
+      font-size: 13px;
+      color: #777;
+      margin: 0;
+    }
+
+    .ef-msg {
+      display: none;
+      margin-top: 16px;
+      padding: 13px 15px;
+      border-radius: 8px;
+      background: #fff3f3;
+      border: 1px solid #f0c3c3;
+      color: #8d1114;
+      font-size: 14.5px;
+      line-height: 1.55;
+    }
+
+    .ef-msg.show {
+      display: block;
+    }
+
+    /* ---------- thank you ---------- */
+    .ef-thanks {
+      display: none;
+      width: 100%;
+      max-width: 920px;
+      margin: 6px auto 26px;
+      padding: 30px 26px;
+      background: #fff;
+      border: 1.5px solid #e31e24;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .ef-thanks.show {
+      display: block;
+    }
+
+    .ef-tick {
+      width: 52px;
+      height: 52px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      background: #e31e24;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ef-tick svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .ef-thanks h4 {
+      font-size: 21px;
+      font-weight: 800;
+      color: #111;
+      margin-bottom: 10px;
+    }
+
+    .ef-thanks p {
+      color: #666;
+      font-size: 15px;
+      line-height: 1.6;
+      max-width: 560px;
+      margin: 0 auto 20px;
+    }
+
+    .ef-thanks-btns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .ef-thanks-btn {
+      display: inline-block;
+      background: #e31e24;
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      border-radius: 8px;
+      padding: .75rem 1.6rem;
+      transition: all .2s ease;
+    }
+
+    .ef-thanks-btn:hover {
+      background: #c40f10;
+    }
+
+    .ef-thanks-btn--ghost {
+      background: transparent;
+      color: #111;
+      border: 1.5px solid #111;
+    }
+
+    .ef-thanks-btn--ghost:hover {
+      background: #111;
+      color: #fff;
+    }
+
+    @media(max-width:760px) {
+      .ef-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ef-checks {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .ef-submit {
+        width: 100%;
+      }
+
+      .ef-actions {
+        justify-content: center;
+        text-align: center;
+      }
+    }
+
+    @media(max-width:460px) {
+      .ef-checks {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ============ SURVEY BANNER ============ */
+    .survey-banner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 24px 70px;
+    }
+
+    .survey-banner-inner {
+      background: #111;
+      border-radius: 18px;
+      padding: 40px 44px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .survey-banner-tag {
+      display: inline-block;
+      border: 1px solid rgba(255, 255, 255, .25);
+      color: #fff;
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      border-radius: 999px;
+      padding: 6px 14px;
+      margin-bottom: 14px;
+    }
+
+    .survey-banner h2 {
+      color: #fff;
+      font-size: clamp(1.35rem, 2.6vw, 1.85rem);
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .survey-banner p {
+      color: #b9b9b9;
+      font-size: 15px;
+      line-height: 1.65;
+      max-width: 640px;
+    }
+
+    .survey-banner-btn {
+      flex: none;
+      margin-top: 0;
+      padding: 0.95rem 1.9rem;
+      font-size: 15px;
+    }
+
+    @media(max-width:800px) {
+      .survey-banner-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 32px 26px;
+      }
+
+      .survey-banner-btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    /* ============ STATS BAND ============ */
+    .stats-band {
+      background: #1a1a1a;
+      padding: 60px 24px;
+    }
+
+    .stats-band-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px 0;
+    }
+
+    .stat-block {
+      text-align: center;
+      padding: 6px 16px;
+      border-right: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .stat-block:nth-child(4n) {
+      border-right: none;
+    }
+
+    .stat-num {
+      font-size: 34px;
+      font-weight: 800;
+      color: #e31e24;
+      line-height: 1;
+    }
+
+    .stat-text {
+      color: #fff;
+      font-size: 14px;
+      margin-top: 10px;
+      line-height: 1.4;
+    }
+
+    /* ============ LOGOS ============ */
+    .logos {
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .logos h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #111;
+      max-width: 880px;
+      margin: 0 auto 40px;
+      padding: 0 24px;
+      line-height: 1.45;
+    }
+
+    .logos .marquee-track img {
+      height: 70px;
+      width: auto;
+      margin: 0 34px;
+      object-fit: contain;
+    }
+
+    .logo-scroll img, .logo-strip img, .logos img {
+      filter: brightness(0) saturate(100%);
+      opacity: 0.6;
+      height: 40px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    /* ============ INFO (HOURS / OFFICE) ============ */
+    .info {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 24px 90px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .info-col {
+      background: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-radius: 16px;
+      padding: 2rem;
+    }
+
+    .info-col h3 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #111;
+      margin-bottom: 18px;
+    }
+
+    .info-col p {
+      color: #444;
+      line-height: 1.7;
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    .info-col .info-strong {
+      font-weight: 700;
+      color: #111;
+    }
+
+    .info-note {
+      color: #777;
+      font-size: 13.5px;
+      font-style: italic;
+      margin-top: 6px;
+    }
+
+    .info-btn {
+      display: inline-block;
+      background: #e31e24;
+      color: #fff;
+      font-weight: 700;
+      border-radius: 8px;
+      padding: 0.7rem 1.5rem;
+      margin-top: 14px;
+      transition: all 0.2s ease;
+    }
+
+    .info-btn:hover {
+      background: #c40f10;
+    }
+
+    /* ============ FOOTER ============ */
+    .footer {
+      background: #000;
+      color: #fff;
+      padding: 60px 30px 30px;
+    }
+
+    .footer-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+    .footer-cols {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .footer-col h4 {
+      font-size: 17px;
+      color: #fff;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 14.5px;
+      color: #c7c7c7;
+      margin-bottom: 11px;
+      font-weight: 400;
+    }
+
+    .footer-col a:hover {
+      color: #fff;
+    }
+
+    .footer-div {
+      height: 1px;
+      background: #2a2a2a;
+      margin: 40px 0 30px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 16px;
+    }
+
+    .footer-social a {
+      width: 26px;
+      height: 26px;
+      color: #fff;
+      opacity: .85;
+    }
+
+    .footer-social a:hover {
+      opacity: 1;
+      color: var(--hti-red);
+    }
+
+    .footer-contact h3 {
+      font-size: 20px;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .footer-contact span {
+      color: var(--hti-red);
+    }
+
+    .footer-brand img {
+      width: 70px;
+    }
+
+    .footer-copy {
+      text-align: center;
+      color: #8a8a8a;
+      font-size: 13px;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #2a2a2a;
+    }
+
+    /* ============ RESPONSIVE ============ */
+    @media(max-width:960px) {
+      .nav-menu {
+        position: fixed;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 16px 24px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, .12);
+        display: none;
+        max-height: calc(100vh - 72px);
+        overflow-y: auto;
+      }
+
+      .nav-menu.open {
+        display: flex;
+      }
+
+      .nav-item {
+        width: 100%;
+        flex-wrap: wrap;
+      }
+
+      .dropdown {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        padding: 4px 0 4px 14px;
+        min-width: auto;
+        width: 100%;
+        display: none;
+      }
+
+      .nav-item.open .dropdown {
+        display: flex;
+      }
+
+      /* a tap leaves :hover stuck on touch devices, which used to point the
+         caret up while the panel stayed shut - drive it from the real state */
+      .nav-item:hover .caret {
+        transform: rotate(45deg);
+        margin-top: -3px;
+      }
+
+      .nav-item.open .caret {
+        transform: rotate(-135deg);
+        margin-top: 3px;
+      }
+
+      /* touch targets: every dropdown link is at least 44px tall */
+      .dropdown a {
+        min-height: 44px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .contact-cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stats-band-inner {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat-block:nth-child(4n) {
+        border-right: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .stat-block:nth-child(2n) {
+        border-right: none;
+      }
+
+      .info {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-cols {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media(max-width:600px) {
+      .contact-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-band-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .stat-block {
+        border-right: none !important;
+      }
+    }
+  
+
+  </style>
+  <!-- shared motion layer: progressive enhancement, see assets/motion.css -->
+  <script>document.documentElement.className += ' mo';</script>
+  <link rel="stylesheet" href="assets/motion.css" />
+  <link rel="stylesheet" href="assets/polish.css" />
+  <script src="assets/motion.js" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Contact HTI India — Hospitality Training Institute","description":"Get in touch with HTI India on WhatsApp, phone or email. We reply within a few hours. Book a hospitality training program today.","url":"https://www.hti-india.com/contact.html","isPartOf":{"@type":"WebSite","name":"HTI India","url":"https://www.hti-india.com/"},"publisher":{"@type":"Organization","name":"HTI India","url":"https://www.hti-india.com/"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.hti-india.com/"},{"@type":"ListItem","position":2,"name":"Get In Touch","item":"https://www.hti-india.com/contact.html"}]}</script>
+</head>
+
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img fetchpriority="high" width="240" height="182"
+          src="images/brand/hti-logo-nav.webp"
+          alt="HTI Logo" /></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
+      <nav class="nav-menu" id="navMenu">
+        <div class="nav-item">Restaurants &amp; QSRs<span class="caret"></span>
+          <div class="dropdown">
+            <div class="dd-head" style="font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#9b9b9b;padding:9px 12px 3px;">Staff Training App</div>
+            <a href="a-la-class.html"><b>&Agrave; La Class <small style="display:inline-block;vertical-align:2px;margin-left:6px;font-size:9.5px;font-weight:800;letter-spacing:.08em;color:#fff;background:#e31e24;border-radius:4px;padding:2px 5px;line-height:1.2;">NEW</small></b><span>2-minute daily lessons, on your staff's phones</span></a>
+            <div class="dd-head" style="font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#9b9b9b;padding:9px 12px 3px;">Service Team</div>
+            <a href="super.html"><b>SUPER</b><span>Waiters, stewards, captains, hostess</span></a>
+            <a href="support.html"><b>SUPPORT</b><span>Same roles &mdash; pre-opening restaurant</span></a>
+            <a href="icedt.html"><b>ICEDT</b><span>Counter executives, sales boys, servers</span></a>
+            <div class="dd-head" style="font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#9b9b9b;padding:9px 12px 3px;">Guest Experience</div>
+            <a href="icare.html"><b>iCARE</b><span>Customer service execs, supervisors</span></a>
+            <a href="vow.html"><b>Vow to Wow</b><span>Frontline reps, team leaders</span></a>
+            <div class="dd-head" style="font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#9b9b9b;padding:9px 12px 3px;">Managers</div>
+            <a href="ramp.html"><b>RAMP</b><span>Restaurant managers &amp; supervisors</span></a>
+            <a href="training-by-role.html" style="color:#e31e24;font-weight:700;text-align:left;border-top:1px solid #eee;margin-top:6px;padding-top:10px;">Find training by role &rarr;</a>
+            <a href="restaurants.html" class="see-all" style="color:#e31e24;font-weight:700;text-align:left;">See All</a>
+          </div>
+        </div>
+        <div class="nav-item">Hotels<span class="caret"></span>
+          <div class="dropdown">
+            <div class="dd-head" style="font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#9b9b9b;padding:9px 12px 3px;">Rooms &amp; Front Desk</div>
+            <a href="fort.html"><b>FORT</b><span>Receptionists, FO executives, GRE, bell boys</span></a>
+            <a href="hotcar.html"><b>HOT-CAR</b><span>Housekeeping attendants &amp; supervisors</span></a>
+            <div class="dd-head" style="font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#9b9b9b;padding:9px 12px 3px;">Kitchen</div>
+            <a href="kmt.html"><b>KMT</b><span>Chefs, sous chefs, kitchen supervisors</span></a>
+            <div class="dd-head" style="font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#9b9b9b;padding:9px 12px 3px;">Whole Property</div>
+            <a href="hotel-shot.html"><b>Hotel SHOT</b><span>Every hotel role &mdash; F&amp;B to security</span></a>
+            <div class="dd-head" style="font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#9b9b9b;padding:9px 12px 3px;">Villas &amp; Homestays</div>
+            <a href="cup.html"><b>CUP</b><span>Caretakers of villas, homestays, guesthouses</span></a>
+            <div class="dd-head" style="font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#9b9b9b;padding:9px 12px 3px;">Grooming &amp; Management</div>
+            <a href="class.html"><b>CLASS</b><span>Guest-facing &amp; corporate professionals</span></a>
+            <a href="mdp.html"><b>MDP</b><span>Newly promoted &amp; mid-level managers</span></a>
+            <a href="training-by-role.html" style="color:#e31e24;font-weight:700;text-align:left;border-top:1px solid #eee;margin-top:6px;padding-top:10px;">Find training by role &rarr;</a>
+            <a href="hotels.html" class="see-all" style="color:#e31e24;font-weight:700;text-align:left;">See All</a>
+          </div>
+        </div>
+        <div class="nav-item">Offices &amp; Retail<span class="caret"></span>
+          <div class="dropdown">
+            <a href="post.html"><b>POST</b><span>Corporate pantry staff &amp; attendants</span></a>
+            <a href="top.html"><b>TOP</b><span>Peons, office boys, support staff</span></a>
+            <a href="training-by-role.html" style="color:#e31e24;font-weight:700;text-align:left;border-top:1px solid #eee;margin-top:6px;padding-top:10px;">Find training by role &rarr;</a>
+            <a href="offices.html" class="see-all" style="color:#e31e24;font-weight:700;text-align:left;">See All</a>
+          </div>
+        </div>
+        <div class="nav-item">More<span class="caret"></span>
+          <div class="dropdown">
+            <div style="font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#8a857d;padding:4px 0 6px;">Free Tools</div>
+            <a href="food-cost-calculator.html"><b>Food Cost Calculator</b><span>Free tool &mdash; work out your food cost %</span></a>
+            <a href="restaurant-cost-calculator.html"><b>Restaurant Cost Calculator</b><span>Free tool &mdash; prime cost, profit &amp; break-even</span></a>
+            <div style="border-top:1px solid #eee;margin:8px 0 6px;"></div>
+            <a href="trainers.html"><b>Our Trainers</b><span>The people who run the sessions</span></a>
+            <a href="brands.html"><b>Our Brands</b><span>HTI, Woosh Biz, Star, Lead, Dox &amp; T3</span></a>
+            <a href="lead.html"><b>Lead by HTI</b><span>Train the trainer, presentation &amp; soft skills</span></a>
+            <a href="leadership-development.html"><b>Leadership Development</b><span>Senior managers &amp; future leaders</span></a>
+            <a href="professional-etiquette.html"><b>Professional Etiquette</b><span>Corporate &amp; client-facing professionals</span></a>
+            <a href="posh-training.html"><b>POSH Training</b><span>All employees, managers &amp; ICC members</span></a>
+            <a href="fssai-training.html"><b>FSSAI Training</b><span>Food handlers &amp; food safety supervisors</span></a>
+            <a href="https://wooshbiz.com/" target="_blank" rel="noopener"><b>Team Building</b><span>Group activities for any team</span></a>
+            <a href="dox.html"><b>Develop SOPs &amp; How-To Videos</b><span>Owners &amp; operations heads</span></a>
+            <a href="blog.html"><b>Blogs</b><span>Hospitality insights &amp; guides</span></a>
+            <a href="training-by-role.html" style="color:#e31e24;font-weight:700;text-align:left;border-top:1px solid #eee;margin-top:6px;padding-top:10px;">Find training by role &rarr;</a>
+          </div>
+        </div>
+        <a href="contact.html" class="nav-contact">Contact Us</a>
+      </nav>
+    </div>
+    <div class="scroll-progress" id="scrollProgress"></div>
+  </header>
+
+  <!-- ============ SECTION 1: HERO ============ -->
+  <section class="contact-hero">
+    <h1>Get In Touch</h1>
+    <h2>Let's talk about training your team.</h2>
+    <p>Have a question about our programs, pricing, or onboarding your staff? Reach us the way that's easiest for you
+      - we usually reply within a few hours.</p>
+  </section>
+
+  <!-- ============ SECTION 2: CONTACT CARDS ============ -->
+  <section class="contact-cards">
+    <div class="contact-card">
+      <div class="c-icon">
+        <img loading="lazy" decoding="async" width="512" height="512" src="images/brand/whatsapp.png"
+          alt="WhatsApp" />
+      </div>
+      <h3>WhatsApp</h3>
+      <p>Fastest way to reach us - chat with our team directly.</p>
+      <div class="c-detail">+91 77380 60902</div>
+      <a href="https://wa.me/917738060902" target="_blank" class="contact-btn">Chat on WhatsApp</a>
+    </div>
+
+    <div class="contact-card">
+      <div class="c-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path
+            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+          </path>
+        </svg>
+      </div>
+      <h3>Call us</h3>
+      <p>Prefer to talk? Call during business hours, Mon-Sat.</p>
+      <div class="c-detail">+91 77380 60902</div>
+      <a href="tel:+917738060902" class="contact-btn">Call now</a>
+    </div>
+
+    <div class="contact-card">
+      <div class="c-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+      </div>
+      <h3>Email</h3>
+      <p>For detailed enquiries, proposals, or partnerships.</p>
+      <div class="c-detail">kaushal@hti-india.com</div>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kaushal@hti-india.com" target="_blank" class="contact-btn">Send an email</a>
+    </div>
+
+    <div class="contact-card contact-card--form">
+      <div class="c-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+      </div>
+      <h3>Contact form</h3>
+      <p>Prefer to write it out? Fill our quick form and we'll get back to you.</p>
+      <div class="c-detail">Takes under 2 minutes</div>
+
+      <!-- ---------- On-page enquiry form: saves to Supabase (contact_enquiries) ---------- -->
+      <form class="ef" id="efForm" novalidate>
+        <!-- Filled in by the programme block in the script below when someone
+             arrives from a programme page carrying ?programme=. Empty and
+             hidden for everybody else. -->
+        <p class="ef-about" id="efAbout" hidden></p>
+        <div class="ef-grid">
+          <div class="ef-field" data-required data-label="Name">
+            <label for="ef-name">Name <span class="ef-req">*</span></label>
+            <input class="ef-input" type="text" id="ef-name" name="name" autocomplete="name"
+              placeholder="Your full name" />
+            <span class="ef-err">Please tell us your name.</span>
+          </div>
+
+          <div class="ef-field" data-required data-label="Organization">
+            <label for="ef-company">Organization <span class="ef-req">*</span></label>
+            <input class="ef-input" type="text" id="ef-company" name="company" autocomplete="organization"
+              placeholder="Hotel, restaurant or company name" />
+            <span class="ef-err">Please tell us where you work.</span>
+          </div>
+
+          <div class="ef-field" data-required data-label="Email">
+            <label for="ef-email">Email <span class="ef-req">*</span></label>
+            <input class="ef-input" type="email" id="ef-email" name="email" autocomplete="email"
+              placeholder="you@company.com" />
+            <span class="ef-err">Please enter a valid email address.</span>
+          </div>
+
+          <div class="ef-field" data-required data-label="Phone">
+            <label for="ef-phone">Phone <span class="ef-req">*</span></label>
+            <input class="ef-input" type="tel" id="ef-phone" name="phone" autocomplete="tel" inputmode="tel"
+              placeholder="10-digit mobile number" />
+            <span class="ef-err">Please enter a valid phone number.</span>
+          </div>
+
+          <!-- Goes to the city column on contact_enquiries; if that column is
+               not there yet the script folds it into the message instead
+               (see withoutCityColumn). Keep it a plain text box: the training
+               happens on the client's premises, and "Lonavala" is as valid
+               as "Mumbai". -->
+          <div class="ef-field" data-required data-label="City">
+            <label for="ef-city">City <span class="ef-req">*</span></label>
+            <input class="ef-input" type="text" id="ef-city" name="city" autocomplete="address-level2"
+              placeholder="Where the training would happen" />
+            <span class="ef-err">Please tell us your city.</span>
+          </div>
+        </div>
+
+        <div class="ef-field ef-fieldset" role="group" aria-labelledby="ef-staff-legend" data-required
+          data-group="staff_type" data-label="Type of staff to be trained">
+          <div class="ef-legend" id="ef-staff-legend">Type Of Staff To Be Trained <span class="ef-req">*</span></div>
+          <div class="ef-checks">
+            <label class="ef-check"><input type="checkbox" name="staff_type" value="F&amp;B Service" /><span>F&amp;B
+                Service</span></label>
+            <label class="ef-check"><input type="checkbox" name="staff_type"
+                value="Housekeeping" /><span>Housekeeping</span></label>
+            <label class="ef-check"><input type="checkbox" name="staff_type" value="Managers / Supervisors" /><span>Managers
+                / Supervisors</span></label>
+            <label class="ef-check"><input type="checkbox" name="staff_type" value="Front Desk" /><span>Front
+                Desk</span></label>
+            <label class="ef-check"><input type="checkbox" name="staff_type" value="Kitchen" /><span>Kitchen</span></label>
+            <label class="ef-check"><input type="checkbox" name="staff_type"
+                value="Corporate" /><span>Corporate</span></label>
+          </div>
+          <span class="ef-err">Please tick at least one type of staff.</span>
+        </div>
+
+        <div class="ef-field ef-fieldset" role="group" aria-labelledby="ef-training-legend" data-required
+          data-group="training_needed" data-label="Training needed">
+          <div class="ef-legend" id="ef-training-legend">Training Needed <span class="ef-req">*</span></div>
+          <div class="ef-checks">
+            <label class="ef-check"><input type="checkbox" name="training_needed" value="Soft Skills" /><span>Soft
+                Skills</span></label>
+            <label class="ef-check"><input type="checkbox" name="training_needed" value="Job Skills" /><span>Job
+                Skills</span></label>
+            <label class="ef-check"><input type="checkbox" name="training_needed" value="Train the Trainer" /><span>Train
+                the Trainer</span></label>
+            <label class="ef-check"><input type="checkbox" name="training_needed" value="Tech &amp; AI" /><span>Tech &amp;
+                AI</span></label>
+            <label class="ef-check"><input type="checkbox" name="training_needed"
+                value="Leadership Development" /><span>Leadership Development</span></label>
+            <label class="ef-check"><input type="checkbox" name="training_needed" value="POSH Training" /><span>POSH
+                Training</span></label>
+            <label class="ef-check"><input type="checkbox" name="training_needed" value="FSSAI / Food Safety" /><span>FSSAI
+                / Food Safety</span></label>
+          </div>
+          <span class="ef-err">Please tick at least one training area.</span>
+        </div>
+
+        <div class="ef-field ef-fieldset">
+          <label for="ef-message">Notes <span class="ef-opt">(optional)</span></label>
+          <textarea class="ef-textarea" id="ef-message" name="message"
+            placeholder="Team size, timelines - anything that helps us prepare."></textarea>
+        </div>
+
+        <!-- honeypot: hidden from people, catches bots -->
+        <div class="ef-hp" aria-hidden="true">
+          <label for="ef-website">Website</label>
+          <input type="text" id="ef-website" name="website" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <div class="ef-actions">
+          <button type="submit" class="ef-submit" id="efSubmit">Send enquiry</button>
+          <p class="ef-note">We reply within one working day, Monday to Saturday.</p>
+        </div>
+
+        <div class="ef-msg" id="efMsg" role="alert"></div>
+      </form>
+
+      <div class="ef-thanks" id="efThanks" role="status">
+        <div class="ef-tick">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+            stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+        <h4>Thank you &mdash; your enquiry is in.</h4>
+        <p>A training consultant is reading it now and will come back to you within one working day. In a hurry? Reach
+          us straight away.</p>
+        <div class="ef-thanks-btns" id="efThanksBtns"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 2b: SURVEY BANNER ============ -->
+  <section class="survey-banner">
+    <div class="survey-banner-inner">
+      <div class="survey-banner-text">
+        <span class="survey-banner-tag">Free &middot; 3 minutes</span>
+        <h2>Not sure which program your team needs?</h2>
+        <p>Answer 15 short questions about your outlets, your team and the gaps guests notice. A training consultant
+          comes back within one working day with the programs that fit &mdash; at no cost.</p>
+      </div>
+      <a href="training-needs-survey.html" class="contact-btn survey-banner-btn">Take the training needs survey</a>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 3: STATS BAND ============ -->
+  <section class="stats-band">
+    <div class="stats-band-inner">
+      <div class="stat-block">
+        <div class="stat-num">300K+</div>
+        <div class="stat-text">Total Students</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">60+</div>
+        <div class="stat-text">Brands</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">5</div>
+        <div class="stat-text">Countries</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">410+</div>
+        <div class="stat-text">Cities</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">13+</div>
+        <div class="stat-text">Languages</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">15+</div>
+        <div class="stat-text">Programs</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">350+</div>
+        <div class="stat-text">Local Language Trainers</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">400K+</div>
+        <div class="stat-text">Total Live Hours</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 4: LOGO STRIP ============ -->
+  <section class="logos">
+    <h2>Leaders in the hospitality and service industries have trusted HTI's services to upskill their staff.</h2>
+    <div class="marquee">
+      <div class="marquee-track" id="logoTrack" style="--dur:60s"></div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 5: HOURS & OFFICE ============ -->
+  <section class="info">
+    <div class="info-col">
+      <h3>Business hours</h3>
+      <p><span class="info-strong">Monday - Saturday:</span> 10:00 AM - 6:00 PM</p>
+      <p><span class="info-strong">Sunday:</span> Closed</p>
+      <p class="info-note">WhatsApp messages are answered outside these hours too.</p>
+    </div>
+    <div class="info-col">
+      <h3>Office</h3>
+      <p class="info-strong">Hospitality Training Institute India Pvt Ltd</p>
+      <p>A433 Vashi Plaza, Sector 17, Sion Panvel Highway, Vashi, Navi Mumbai - 400703.</p>
+      <a href="https://wa.me/917738060902" target="_blank" class="info-btn">Message us to book a visit</a>
+    </div>
+  </section>
+
+    <!-- ============ WHERE WE TRAIN ============
+       Doors to the city landing pages. See tools/wire-city-links.js. -->
+  <section data-city-strip style="background:#ede9e3;padding:44px 0 48px;">
+    <div style="max-width:1160px;margin:0 auto;padding:0 24px;">
+      <h2 style="font-size:clamp(21px,2.6vw,28px);font-weight:700;letter-spacing:-.015em;margin:0 0 10px;">Hospitality training, city by city</h2>
+      <p style="font-size:15.5px;line-height:1.6;color:#55504a;max-width:66ch;margin:0 0 22px;">HTI trainers travel from the Navi Mumbai head office and run sessions at your own property. Sessions have gone out to over 410 cities across India &mdash; these are the ones with a page of their own.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:9px;">
+        <a href="hospitality-training-mumbai.html" style="background:#fff;border:1px solid #ddd7cf;border-radius:999px;padding:9px 18px;font-weight:600;font-size:14.5px;color:#111;text-decoration:none;white-space:nowrap;">Mumbai</a>
+        <a href="hospitality-training-delhi-ncr.html" style="background:#fff;border:1px solid #ddd7cf;border-radius:999px;padding:9px 18px;font-weight:600;font-size:14.5px;color:#111;text-decoration:none;white-space:nowrap;">Delhi NCR</a>
+        <a href="hospitality-training-pune.html" style="background:#fff;border:1px solid #ddd7cf;border-radius:999px;padding:9px 18px;font-weight:600;font-size:14.5px;color:#111;text-decoration:none;white-space:nowrap;">Pune</a>
+        <a href="hospitality-training-bengaluru.html" style="background:#fff;border:1px solid #ddd7cf;border-radius:999px;padding:9px 18px;font-weight:600;font-size:14.5px;color:#111;text-decoration:none;white-space:nowrap;">Bengaluru</a>
+        <a href="hospitality-training-hyderabad.html" style="background:#fff;border:1px solid #ddd7cf;border-radius:999px;padding:9px 18px;font-weight:600;font-size:14.5px;color:#111;text-decoration:none;white-space:nowrap;">Hyderabad</a>
+        <a href="hospitality-training-chennai.html" style="background:#fff;border:1px solid #ddd7cf;border-radius:999px;padding:9px 18px;font-weight:600;font-size:14.5px;color:#111;text-decoration:none;white-space:nowrap;">Chennai</a>
+        <a href="hospitality-training-kolkata.html" style="background:#fff;border:1px solid #ddd7cf;border-radius:999px;padding:9px 18px;font-weight:600;font-size:14.5px;color:#111;text-decoration:none;white-space:nowrap;">Kolkata</a>
+        <a href="hospitality-training-goa.html" style="background:#fff;border:1px solid #ddd7cf;border-radius:999px;padding:9px 18px;font-weight:600;font-size:14.5px;color:#111;text-decoration:none;white-space:nowrap;">Goa</a>
+        <a href="hospitality-training-jaipur.html" style="background:#fff;border:1px solid #ddd7cf;border-radius:999px;padding:9px 18px;font-weight:600;font-size:14.5px;color:#111;text-decoration:none;white-space:nowrap;">Jaipur</a>
+        <a href="hospitality-training-ahmedabad.html" style="background:#fff;border:1px solid #ddd7cf;border-radius:999px;padding:9px 18px;font-weight:600;font-size:14.5px;color:#111;text-decoration:none;white-space:nowrap;">Ahmedabad</a>
+      </div>
+    </div>
+  </section>
+
+<!-- ============ FOOTER ============ -->
+  <div data-subscribe data-source="footer"></div>
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>HTI</h4>
+          <a href="about.html">About Us</a>
+          <a href="trainers.html">Our Trainers</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="training-needs-survey.html">Training Needs Survey</a>
+        </div>
+        <div class="footer-col">
+          <h4>Programs</h4>
+          <a href="restaurants.html">Restaurants &amp; QSRs</a>
+          <a href="hotels.html">Hotels</a>
+          <a href="offices.html">Offices</a>
+        </div>
+        <div class="footer-col">
+          <h4>More</h4>
+          <a href="brands.html">Our Brands</a>
+          <a href="https://wooshbiz.com/" target="_blank" rel="noopener">Team Building</a>
+          <a href="lead.html">Lead by HTI</a>
+          <a href="leadership-development.html">Leadership Development</a>
+          <a href="professional-etiquette.html">Professional Etiquette</a>
+          <a href="posh-training.html">POSH Training</a>
+          <a href="fssai-training.html">FSSAI Training</a>
+          <a href="dox.html">Develop SOPs &amp; How-To Videos</a>
+          <a href="blog.html">Blogs</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="food-cost-calculator.html">Food Cost Calculator</a>
+          <a href="restaurant-cost-calculator.html">Restaurant Cost Calculator</a>
+        </div>
+      </div>
+      <div class="footer-div"></div>
+      <div class="footer-bottom">
+        <div class="footer-social">
+          <a href="https://www.facebook.com/hti.india/" target="_blank" aria-label="Facebook"><svg viewBox="0 0 24 24"
+              fill="currentColor">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669c1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg></a>
+          <a href="https://www.instagram.com/hti.india/" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24"
+              fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M12 2c-2.716 0-3.056.012-4.123.06c-1.064.049-1.791.218-2.427.465a4.901 4.901 0 0 0-1.772 1.153A4.902 4.902 0 0 0 2.525 5.45c-.247.636-.416 1.363-.465 2.427C2.011 8.944 2 9.284 2 12s.011 3.056.06 4.123c.049 1.064.218 1.791.465 2.427a4.903 4.903 0 0 0 1.153 1.772a4.903 4.903 0 0 0 1.772 1.153c.636.247 1.363.416 2.427.465c1.067.048 1.407.06 4.123.06s3.056-.012 4.123-.06c1.064-.049 1.791-.218 2.427-.465a4.902 4.902 0 0 0 1.772-1.153a4.902 4.902 0 0 0 1.153-1.772c.247-.636.416-1.363.465-2.427c.048-1.067.06-1.407.06-4.123s-.012-3.056-.06-4.123c-.049-1.064-.218-1.791-.465-2.427a4.902 4.902 0 0 0-1.153-1.772a4.901 4.901 0 0 0-1.772-1.153c-.636-.247-1.363-.416-2.427-.465C15.056 2.012 14.716 2 12 2m0 1.802c2.67 0 2.986.01 4.04.058c.976.045 1.505.207 1.858.344c.466.182.8.399 1.15.748c.35.35.566.684.748 1.15c.136.353.3.882.344 1.857c.048 1.055.058 1.37.058 4.041c0 2.67-.01 2.986-.058 4.04c-.045.976-.208 1.505-.344 1.858a3.1 3.1 0 0 1-.748 1.15c-.35.35-.684.566-1.15.748c-.353.136-.882.3-1.857.344c-1.054.048-1.37.058-4.041.058c-2.67 0-2.987-.01-4.04-.058c-.976-.045-1.505-.208-1.858-.344a3.098 3.098 0 0 1-1.15-.748a3.098 3.098 0 0 1-.748-1.15c-.137-.353-.3-.882-.344-1.857c-.048-1.055-.058-1.37-.058-4.041c0-2.67.01-2.986.058-4.04c.045-.976.207-1.505.344-1.858c.182-.466.399-.8.748-1.15c.35-.35.684-.566 1.15-.748c.353-.137.882-.3 1.857-.344c1.055-.048 1.37-.058 4.041-.058m0 11.531a3.333 3.333 0 1 1 0-6.666a3.333 3.333 0 0 1 0 6.666m0-8.468a5.135 5.135 0 1 0 0 10.27a5.135 5.135 0 0 0 0-10.27m6.538-.203a1.2 1.2 0 1 1-2.4 0a1.2 1.2 0 0 1 2.4 0" />
+            </svg></a>
+          <a href="https://www.linkedin.com/company/hospitality-training-institute-india-pvt-ltd" target="_blank"
+            aria-label="LinkedIn"><svg viewBox="0 0 32 32" fill="currentColor">
+              <path
+                d="M26.2 4H5.8C4.8 4 4 4.8 4 5.7v20.5c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V5.7c0-.9-.8-1.7-1.8-1.7zM11.1 24.4H7.6V13h3.5v11.4zm-1.7-13c-1.1 0-2.1-.9-2.1-2.1c0-1.2.9-2.1 2.1-2.1c1.1 0 2.1.9 2.1 2.1s-1 2.1-2.1 2.1zm15.1 12.9H21v-5.6c0-1.3 0-3.1-1.9-3.1S17 17.1 17 18.5v5.7h-3.5V13h3.3v1.5h.1c.5-.9 1.7-1.9 3.4-1.9c3.6 0 4.3 2.4 4.3 5.5v6.2z" />
+            </svg></a>
+          <a href="https://www.youtube.com/c/Hti-india" target="_blank" aria-label="YouTube"><svg viewBox="0 0 24 24"
+              fill="currentColor">
+              <path
+                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+            </svg></a>
+        </div>
+        <div class="footer-contact"><a href="tel:+917738060902">
+            <h3>Contact Us: <span>+91 77380 60902</span></h3>
+          </a></div>
+        <a href="index.html" class="footer-brand"><img loading="lazy" decoding="async" width="240" height="182"
+            src="images/brand/hti-logo-nav.webp"
+            alt="HTI" /></a>
+      </div>
+      <div class="footer-copy">&#169;&#65039; HOSPITALITY TRAINING INSTITUTE INDIA PRIVATE. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    /* ---------- Logo marquee (duplicate for seamless loop) ---------- */
+    const logos = [
+      ["images/clients/1.webp", "Bhagat Tarachand"],
+      ["images/clients/2.webp", "Mamagoto"],
+      ["images/clients/3.webp", "The Yellow Chilli"],
+      ["images/clients/4.webp", "Prasad Food Divine"],
+      ["images/clients/5.webp", "Copper Chimney"],
+      ["images/clients/6.webp", "VITS Select Hotels"],
+      ["images/clients/7.webp", "Mainland China"],
+      ["images/clients/8.webp", "CinCin"],
+      ["images/clients/9.webp", "Bhagat Tarachand"],
+      ["images/clients/10.webp", "Ginger Hotels"],
+      ["images/clients/11.webp", "Hakkasan"],
+      ["images/clients/12.webp", "Sahara Star"],
+      ["images/clients/13.webp", "Yauatcha"],
+      ["images/clients/14.webp", "OYO"],
+      ["images/clients/15.webp", "Tata Motors"],
+      ["images/clients/16.webp", "Club Mahindra, Mahindra Holidays & Resorts"],
+      ["images/clients/17.webp", "Air India"],
+      ["images/clients/18.webp", "Pidilite Industries"],
+      ["images/clients/19.webp", "Foxtrot"],
+      ["images/clients/20.webp", "Hindustan Petroleum"],
+      ["images/clients/21.webp", "Goa Portuguesa"],
+      ["images/clients/22.webp", "India Pavilion"],
+      ["images/clients/23.webp", "Invisible Restaurant Bar"],
+      ["images/clients/24.webp", "Miraj Cinemas"],
+      /* white-on-dark variants of the newly added brands */
+      ["images/clients/64-hilton-white.svg", "Hilton Hotels & Resorts"],
+      ["images/clients/65-sbi-white.svg", "State Bank of India"],
+      ["images/clients/66-pugdundee-safaris-white.webp", "Pugdundee Safaris"],
+      ["images/clients/67-singinawa-white.webp", "Singinawa Jungle Lodge, Kanha"],
+      ["images/clients/68-burma-burma-white.png", "Burma Burma Restaurant & Tea Room"],
+      ["images/clients/46-oblu-white.webp", "OBLU by Atmosphere at Helengeli, Maldives"]
+    ];
+    (function () {
+      const track = document.getElementById('logoTrack');
+      // second copy exists only to make the loop seamless, so hide it from
+      // assistive tech and search engines rather than repeating every brand name
+      const row = isDupe => logos.map(([src, name]) => {
+        const a = isDupe ? 'alt="" aria-hidden="true"' : `alt="${name}"`;
+        return `<img src="${src}" ${a} loading="lazy">`;
+      }).join('');
+      track.innerHTML = row(false) + row(true);
+    })();
+
+    /* ---------- Mobile nav ---------- */
+    (function () {
+      const toggle = document.getElementById('navToggle');
+      const menu = document.getElementById('navMenu');
+
+      /* one source of truth for the open state, so the panel, the
+         hamburger-to-cross animation and the ARIA state always agree */
+      function setNav(open) {
+        menu.classList.toggle('open', open);
+        toggle.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        if (!open) {
+          menu.querySelectorAll('.nav-item.open').forEach(i => i.classList.remove('open'));
+        }
+      }
+
+      toggle.addEventListener('click', () => setNav(!menu.classList.contains('open')));
+
+      /* Escape, or a tap outside the panel, also closes it */
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && menu.classList.contains('open')) setNav(false);
+      });
+      document.addEventListener('click', (e) => {
+        if (window.innerWidth <= 960 && menu.classList.contains('open') &&
+          !menu.contains(e.target) && !toggle.contains(e.target)) setNav(false);
+      });
+      document.querySelectorAll('.nav-item').forEach(item => {
+        item.addEventListener('click', (e) => {
+          if (window.innerWidth <= 960 && (e.target === item || e.target.classList.contains('caret'))) {
+            item.classList.toggle('open');
+          }
+        });
+      });
+      /* tapping any nav link closes the menu - matters for links that open
+         in a new tab and so never navigate this page away */
+      menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          setNav(false);
+        });
+      });
+    })();
+  </script>
+  <script>
+    /* ---------- Scroll progress line under the navbar ---------- */
+    (function () {
+      const bar = document.getElementById('scrollProgress');
+      const navbar = document.querySelector('.navbar');
+      if (!bar || !navbar) return;
+      let ticking = false;
+
+      function update() {
+        ticking = false;
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        const y = window.scrollY || window.pageYOffset;
+        const ratio = max > 0 ? Math.min(Math.max(y / max, 0), 1) : 0;
+        bar.style.transform = `scaleX(${ratio})`;
+        navbar.classList.toggle('scrolled', y > 4);
+      }
+
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(update);
+        }
+      }, { passive: true });
+      window.addEventListener('resize', update, { passive: true });
+      window.addEventListener('orientationchange', update);
+      /* mobile browsers resize the viewport when the URL bar hides/shows */
+      if (window.visualViewport) {
+        window.visualViewport.addEventListener('resize', update);
+      }
+      window.addEventListener('load', update);
+      update();
+    })();
+  </script>
+
+  <script>
+    /* =========================================================
+       CONTACT ENQUIRY FORM
+       Enquiries go to Supabase (table: contact_enquiries).
+       Same REST pattern and anon key as training-needs-survey.html.
+       ========================================================= */
+    (function () {
+      const SUPABASE_URL = "https://ytthcgdsbfagvwcopoaj.supabase.co";
+      const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl0dGhjZ2RzYmZhZ3Z3Y29wb2FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMzMjk5MTMsImV4cCI6MjA5ODkwNTkxM30.JIDahcRTu3VbFpZ55Ti5hHg_JrHobk0zh8PSaj9lWLc";
+      const TABLE = "contact_enquiries";
+
+      const form = document.getElementById('efForm');
+      if (!form) return;
+      const btn = document.getElementById('efSubmit');
+      const msg = document.getElementById('efMsg');
+      const thanks = document.getElementById('efThanks');
+
+      /* an auto-scroll is exactly what "reduce motion" is meant to switch off */
+      const scrollMode = window.matchMedia &&
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+      const scrollToY = y => window.scrollTo({ top: Math.max(0, y), behavior: scrollMode });
+
+      /* ---------- thank-you buttons reuse the links already on this page ---------- */
+      (function buildThanksButtons() {
+        const box = document.getElementById('efThanksBtns');
+        if (!box) return;
+        const wa = document.querySelector('.contact-cards a[href*="wa.me/"]');
+        const tel = document.querySelector('.contact-cards a[href^="tel:"]');
+        const telCard = tel && tel.closest('.contact-card');
+        const telNumber = telCard && telCard.querySelector('.c-detail');
+        let html = '';
+        if (wa) {
+          html += '<a class="ef-thanks-btn" href="' + wa.getAttribute('href') +
+            '" target="_blank" rel="noopener">Chat on WhatsApp</a>';
+        }
+        if (tel) {
+          html += '<a class="ef-thanks-btn ef-thanks-btn--ghost" href="' + tel.getAttribute('href') + '">Call ' +
+            (telNumber ? telNumber.textContent.trim() : 'us') + '</a>';
+        }
+        box.innerHTML = html;
+      })();
+
+      /* ---------- helpers ---------- */
+      const val = n => ((form.elements[n] && form.elements[n].value) || '').trim();
+      const pickedAll = n =>
+        Array.from(form.querySelectorAll('input[name="' + n + '"]:checked')).map(el => el.value);
+
+      const emailOk = v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+      /* Indian mobiles, tolerant of +91, a leading 0, spaces and dashes.
+         Strip the country code by length, not by prefix - plenty of real
+         numbers start with 91 themselves. */
+      const phoneOk = function (v) {
+        const d = v.replace(/\D/g, '');
+        if (d.length === 10) return /^[6-9]/.test(d);
+        if (d.length === 11) return d[0] === '0' && /^[6-9]/.test(d.slice(1));
+        if (d.length === 12) return d.slice(0, 2) === '91' && /^[6-9]/.test(d.slice(2));
+        return false;
+      };
+
+      /* ---------- which programme sent them here ----------
+         The 15 programme pages and the 10 city pages hand over with
+         ?programme=<slug> - cities are prefixed city-. The slug is
+         looked up in this table rather than printed as it arrives: a query
+         string is a stranger's text, and it would otherwise land in the page
+         and in the sales inbox verbatim. An unknown slug simply does nothing.
+
+         Matching it also lifts the "Training needed" requirement - they have
+         already told us, by the page they came from - while leaving the
+         checkboxes there for anyone who wants to add to it. */
+      const PROGRAMMES = {
+        'class': ['CLASS', 'Cultural Lessons And Social Skills'],
+        'cup': ['CUP', 'Caretakers Upgradation Program'],
+        'fort': ['FORT', 'Frontdesk Operations & Receptionist Training'],
+        'hotcar': ['HOT-CAR', 'Housekeeping Operations & Training'],
+        'hotel-shot': ['HOTel SHOT', 'Systems in Hospitality Operations & Training'],
+        'icare': ['iCARE', 'Customer Affinity & Relationship Enhancement'],
+        'icedt': ['ICEDT', 'Interactive Counter Executives Development & Training'],
+        'kmt': ['KMT', 'Kitchen Management Training'],
+        'mdp': ['MDP', 'Management Development Program'],
+        'post': ['POST', 'Pantry Operations Systems & Training'],
+        'ramp': ['RAMP', 'Restaurant Administration & Management Program'],
+        'super': ['SUPER', 'Skill Upgradation Program for Employees of Restaurants'],
+        'support': ['SUPPORT', 'Skill Upgradation Program for Pre-Opening Restaurant Teams'],
+        'top': ['TOP', 'Training & Operations for Peons'],
+        'vow': ['Vow to Wow', 'Customer Experience Training'],
+
+        /* The ten city landing pages hand over the same way, prefixed so a
+           city can never collide with a programme acronym. The label is what
+           reaches the sales inbox, so it is written to read as a line in an
+           enquiry rather than as a slug: "Training in Goa", not "goa". */
+        'city-mumbai': ['Training in Mumbai', 'on-site staff training across Mumbai, Navi Mumbai and Thane'],
+        'city-delhi-ncr': ['Training in Delhi NCR', 'on-site staff training across Delhi, Gurugram, Noida and Faridabad'],
+        'city-pune': ['Training in Pune', 'on-site staff training across Pune'],
+        'city-bengaluru': ['Training in Bengaluru', 'on-site staff training across Bengaluru'],
+        'city-hyderabad': ['Training in Hyderabad', 'on-site staff training across Hyderabad'],
+        'city-chennai': ['Training in Chennai', 'on-site staff training across Chennai'],
+        'city-kolkata': ['Training in Kolkata', 'on-site staff training across Kolkata'],
+        'city-goa': ['Training in Goa', 'on-site staff training across North and South Goa'],
+        'city-jaipur': ['Training in Jaipur', 'on-site staff training across Jaipur'],
+        'city-ahmedabad': ['Training in Ahmedabad', 'on-site staff training across Ahmedabad and Gandhinagar']
+      };
+
+      const programme = (function () {
+        let slug = '';
+        try {
+          slug = (new URLSearchParams(location.search).get('programme') || '').toLowerCase();
+        } catch (e) { return null; }
+        const hit = Object.prototype.hasOwnProperty.call(PROGRAMMES, slug) && PROGRAMMES[slug];
+        if (!hit) return null;
+
+        const about = document.getElementById('efAbout');
+        if (about) {
+          /* textContent, not innerHTML: the strings are ours, and keeping it
+             that way is what makes the table above worth having */
+          const b = document.createElement('b');
+          b.textContent = hit[0];
+          about.append('You are enquiring about ', b, ' — ' + hit[1] +
+            '. That is already noted, so just leave us your details below.');
+          about.hidden = false;
+        }
+
+        const group = form.querySelector('.ef-field[data-group="training_needed"]');
+        if (group) group.removeAttribute('data-required');
+
+        /* a city page has already said which city; put it in the box, where
+           they can still change it to "Thane" or "Navi Mumbai" */
+        if (slug.indexOf('city-') === 0 && form.elements.city && !form.elements.city.value) {
+          form.elements.city.value = hit[0].replace(/^Training in /, '');
+        }
+
+        return hit[0];
+      })();
+
+      const required = Array.from(form.querySelectorAll('.ef-field[data-required]'));
+
+      function isFilled(field) {
+        const group = field.dataset.group;
+        if (group) {
+          return form.querySelectorAll('input[name="' + group + '"]:checked').length > 0;
+        }
+        const input = field.querySelector('input, textarea');
+        if (!input) return true;
+        const v = input.value.trim();
+        if (!v) return false;
+        if (input.type === 'email') return emailOk(v);
+        if (input.type === 'tel') return phoneOk(v);
+        return true;
+      }
+
+      /* clear a field's error the moment it is put right */
+      function clearIfFixed(e) {
+        const field = e.target.closest('.ef-field');
+        if (field && field.classList.contains('invalid') && isFilled(field)) {
+          field.classList.remove('invalid');
+        }
+      }
+      form.addEventListener('input', clearIfFixed);
+      form.addEventListener('change', clearIfFixed);
+
+      /* ---------- answers -> row ---------- */
+      function collect() {
+        return {
+          name: val('name'),
+          company: val('company'),
+          phone: val('phone'),
+          email: val('email'),
+          staff_type: pickedAll('staff_type').join(', '),
+          /* the programme leads the list: it is the specific thing they read
+             about, the ticks are the general areas */
+          training_needed: (programme ? [programme + ' (programme page)'] : [])
+            .concat(pickedAll('training_needed')).join(', '),
+          city: val('city'),
+          message: val('message')
+        };
+      }
+
+      /* The city column is added from the Supabase dashboard, not from this
+         repo, so the form cannot assume it exists. When PostgREST answers
+         PGRST204 (unknown column) the city goes back to being the first line
+         of the message, and nobody's enquiry is lost over a missing column. */
+      function withoutCityColumn(row) {
+        const r = Object.assign({}, row);
+        delete r.city;
+        r.message = ['City: ' + row.city, row.message].filter(Boolean).join('\n\n');
+        return r;
+      }
+
+      function save(row) {
+        return fetch(`${SUPABASE_URL}/rest/v1/${TABLE}`, {
+          method: 'POST',
+          headers: {
+            'apikey': SUPABASE_ANON_KEY,
+            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+            'Content-Type': 'application/json',
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify(row)
+        });
+      }
+
+      /* ---------- submit ---------- */
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        msg.classList.remove('show');
+
+        /* bots fill hidden fields; people don't */
+        if (val('website')) return;
+
+        const missing = [];
+        let firstBad = null;
+        required.forEach(field => {
+          const ok = isFilled(field);
+          field.classList.toggle('invalid', !ok);
+          if (!ok) {
+            missing.push(field.dataset.label);
+            if (!firstBad) firstBad = field;
+          }
+        });
+
+        if (firstBad) {
+          msg.innerHTML = '<b>Almost there.</b> Please check: ' + missing.join(', ') + '.';
+          msg.classList.add('show');
+          const focusable = firstBad.querySelector('input:not([type=checkbox]), textarea');
+          const box = firstBad.getBoundingClientRect();
+          /* only move the page if the first problem is off-screen - scrolling
+             under someone who can already see the field is the jarring bit */
+          if (box.top < 140 || box.bottom > window.innerHeight - 20) {
+            scrollToY(box.top + window.scrollY - 150);
+            if (focusable) setTimeout(() => focusable.focus({ preventScroll: true }), 400);
+          } else if (focusable) {
+            focusable.focus({ preventScroll: true });
+          }
+          return;
+        }
+
+        const answers = collect();
+        btn.disabled = true;
+        btn.textContent = 'Sending...';
+
+        try {
+          let res = await save(answers);
+          if (res.status === 400) {
+            const err = await res.json().catch(() => null);
+            if (err && err.code === 'PGRST204') res = await save(withoutCityColumn(answers));
+          }
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+
+          if (typeof gtag === 'function') {
+            gtag('event', 'generate_lead', {
+              event_category: 'contact',
+              event_label: 'contact_enquiry_form'
+            });
+          }
+
+          form.style.display = 'none';
+          thanks.classList.add('show');
+          scrollToY(thanks.getBoundingClientRect().top + window.scrollY - 140);
+        } catch (err) {
+          /* nothing the visitor typed is touched - they can simply press again */
+          msg.innerHTML = "<b>We couldn't send that just now.</b> Everything you typed is still here - please press " +
+            "Try again. If it keeps failing, use the WhatsApp, call or email buttons above and we'll pick it up there.";
+          msg.classList.add('show');
+          btn.disabled = false;
+          btn.textContent = 'Try again';
+        }
+      });
+    })();
+  </script>
+  <script src="assets/subscribe.js" defer></script>
+  <script src="assets/track.js" defer></script>
+</body>
+
+</html>

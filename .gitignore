@@ -1,0 +1,15 @@
+# Local script containing Supabase API keys — never commit
+insert-blog.js
+
+.claude/
+
+# Editor settings — local to each machine
+.vscode/
+
+# Local DB migration backups — rollback data, never commit
+.migrate/
+
+blog-partners.json
+body.json
+layouts.json
+patch-61.json

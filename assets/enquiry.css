@@ -1,0 +1,547 @@
+/* ============================================================================
+   enquiry.css — the on-page enquiry block and the sticky mobile contact bar
+   ----------------------------------------------------------------------------
+   Every programme page used to send a ready buyer to contact.html to start
+   again, and the lead arrived without saying which programme it was about.
+   These components put WhatsApp, a phone number and a one-press route into
+   the main enquiry form on the page someone is already reading, with the
+   programme carried across so the lead never arrives anonymous.
+
+   Loaded by the 15 programme pages. Colours come from the page's own
+   --hti-red / --hti-bg variables, which differ slightly per programme, with
+   fallbacks so the block still looks right if a page has not declared them.
+   ========================================================================== */
+
+/* ------------------------------------------------------- programme heading -- */
+
+/* The H1 used to be the bare acronym - "SUPER", "ICEDT", "V2W" - which is the
+   strongest on-page signal in search spent on a word nobody searches for. The
+   searched phrase now leads the heading and the acronym follows it in the
+   markup; these two rules put the acronym back on top visually, so the page
+   looks the way it always did. */
+
+.pe-h1-lead,
+.pe-h1-acr {
+  display: block;
+}
+
+h1 .pe-h1-lead {
+  font-size: .46em;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: #2b2b2b;
+  line-height: 1.3;
+  margin-bottom: .35em;
+  order: 2;
+}
+
+h1 .pe-h1-acr {
+  order: 1;
+}
+
+h1:has(.pe-h1-lead) {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Fallback for browsers without :has() - the heading simply reads
+   descriptor-then-acronym, which is still correct, just a different order. */
+@supports not (selector(:has(*))) {
+  h1 .pe-h1-lead { margin-bottom: .2em; }
+}
+
+/* ---------------------------------------------------------------- enquiry -- */
+
+.pe {
+  background: #fff;
+  padding: 64px 24px;
+}
+
+.pe-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.pe-lead h2 {
+  font-size: clamp(26px, 3.4vw, 34px);
+  line-height: 1.15;
+  margin: 0 0 14px;
+  color: #111;
+}
+
+.pe-lead h2 em {
+  font-style: normal;
+  color: var(--hti-red, #e32129);
+}
+
+.pe-lead p {
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: #444;
+  margin: 0 0 12px;
+  max-width: 46ch;
+}
+
+.pe-points {
+  list-style: none;
+  margin: 22px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.pe-points li {
+  position: relative;
+  padding-left: 28px;
+  font-size: 15.5px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.pe-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 16px;
+  height: 9px;
+  border-left: 2.5px solid var(--hti-red, #e32129);
+  border-bottom: 2.5px solid var(--hti-red, #e32129);
+  transform: rotate(-45deg);
+}
+
+/* --- direct contact: WhatsApp and phone, above the form, not below it ------ */
+
+.pe-direct {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+/* One button carries the weight, the other stays quiet. Two saturated fills
+   side by side fight each other and neither reads as "press me first". */
+
+.pe-direct a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;              /* comfortable thumb target */
+  padding: 0 22px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 15.5px;
+  line-height: 1;
+  letter-spacing: .005em;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  transition: transform .16s ease, background-color .16s ease,
+              border-color .16s ease, box-shadow .16s ease;
+}
+
+/* WhatsApp leads: in Indian hospitality it is the channel people actually use.
+   White on the brand green, not the dark green that muddied it before. */
+.pe-wa {
+  background: #21bf5b;
+  color: #fff;
+  box-shadow: 0 1px 2px rgba(14, 70, 38, .18), 0 6px 16px -10px rgba(14, 70, 38, .55);
+}
+
+.pe-wa:hover { background: #1aa94f; transform: translateY(-1px); }
+.pe-wa:active { background: #179546; transform: translateY(0); box-shadow: 0 1px 2px rgba(14, 70, 38, .22); }
+
+/* Calling is the quieter alternative, so it looks like one. */
+.pe-tel {
+  background: #fff;
+  color: #1b1512;
+  border-color: rgba(27, 21, 18, .22);
+  box-shadow: 0 1px 2px rgba(22, 18, 15, .05);
+}
+
+.pe-tel:hover {
+  background: #fbf9f7;
+  border-color: rgba(27, 21, 18, .45);
+  transform: translateY(-1px);
+}
+
+.pe-tel:active { background: #f2ede9; transform: translateY(0); }
+
+.pe-direct a:focus-visible {
+  outline: 3px solid var(--hti-red, #e32129);
+  outline-offset: 3px;
+}
+
+.pe-direct svg { width: 18px; height: 18px; flex: none; }
+
+/* --- the enquiry hand-off ------------------------------------------------- */
+
+/* This panel used to hold a second, programme-specific form that posted
+   straight to Supabase. It now hands the visitor to contact.html instead:
+   that is the form the office watches, and one inbox with one shape of lead
+   beats two forms that have to be checked separately. The programme travels
+   in the query string, so the enquiry still arrives saying what it is about.
+   Everything that made that form work - the fields, the inputs, the submit
+   button, the thank-you panel, the honeypot - went with it. */
+
+.pe-cta-wrap {
+  background: var(--hti-bg, #f3f2ef);
+  border: 1px solid rgba(0, 0, 0, .08);
+  border-radius: 14px;
+  padding: 26px;
+}
+
+.pe-cta-wrap h3 {
+  font-size: 19px;
+  margin: 0 0 6px;
+  color: #111;
+}
+
+.pe-cta-note {
+  font-size: 14.5px;
+  color: #5a5a5a;
+  margin: 0 0 20px;
+  line-height: 1.55;
+}
+
+/* the one thing to press on this panel, so it takes the full width of it */
+.pe-cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 50px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  background: var(--hti-red, #e32129);
+  color: #fff;
+  font-weight: 700;
+  font-size: 16.5px;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0 1px 2px rgba(140, 16, 20, .22), 0 8px 20px -12px rgba(140, 16, 20, .7);
+  transition: transform .16s ease, filter .16s ease, box-shadow .16s ease;
+}
+
+.pe-cta-btn:hover { filter: brightness(.94); transform: translateY(-1px); }
+
+.pe-cta-btn:active {
+  filter: brightness(.88);
+  transform: translateY(0) scale(.99);
+  box-shadow: 0 1px 2px rgba(140, 16, 20, .26);
+}
+
+.pe-cta-btn:focus-visible { outline: 3px solid #1b1512; outline-offset: 3px; }
+
+.pe-cta-btn svg { width: 17px; height: 17px; flex: none; }
+
+/* what happens after the press, so the extra click is not a leap of faith */
+.pe-cta-steps {
+  list-style: none;
+  margin: 20px 0 18px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #444;
+}
+
+.pe-cta-steps li {
+  position: relative;
+  padding-left: 26px;
+}
+
+.pe-cta-steps li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 14px;
+  height: 8px;
+  border-left: 2.5px solid var(--hti-red, #e32129);
+  border-bottom: 2.5px solid var(--hti-red, #e32129);
+  transform: rotate(-45deg);
+}
+
+.pe-privacy { font-size: 12.5px; color: #777; margin: 0; line-height: 1.45; }
+.pe-privacy a { color: inherit; text-decoration: underline; }
+
+/* ------------------------------------------------- sticky mobile contact -- */
+
+/* Below 860px the header's Contact button collapses into the hamburger, so
+   without this there is no way to reach us without opening a menu.
+
+   It has to sit on the screen the whole time someone is reading, which means
+   it has to be easy to ignore. Two saturated blocks were not: bright green
+   against HTI red, both shouting, is tiring over a long page. So one button
+   leads and the other recedes, the bar sits on a soft near-white rather than
+   pure white, and the whole thing is slimmer than it was. */
+/* ---------------------------------------------------------------- contact bar --
+   This used to be a full-width two-button dock pinned across the bottom of
+   every page on mobile. It worked, but it ate about 72px of every screen for
+   its whole life, and the page underneath had to be padded to clear it - so
+   the cost was paid on every scroll of every page whether or not anybody was
+   thinking about getting in touch.
+
+   It is now a pair of floating round buttons in the bottom-right corner.
+   Same two links, same order of importance, roughly a quarter of the screen
+   area, and no body padding: the footer ends where the footer ends.
+
+   WhatsApp keeps the lead and the brand green, because it is the channel
+   people in this market actually open. Calling stays as its own button
+   rather than folding into a menu - track.js counts phone_click as a key
+   event precisely because the call is very often the whole enquiry, and
+   burying it one tap deeper would cost real leads.
+
+   The labels are still in the markup. font-size:0 hides them from the eye
+   while leaving the text where a screen reader can still find it, which is
+   what gives each button its accessible name - there is no aria-label in the
+   markup on the seventy-odd pages that carry this. */
+.pe-bar { display: none; }
+
+@media (max-width: 860px) {
+  .pe-bar {
+    display: flex;
+    /* column-reverse so the first link in the markup - WhatsApp - sits
+       nearest the thumb, which is the bottom */
+    flex-direction: column-reverse;
+    gap: 11px;
+    position: fixed;
+    right: 14px;
+    left: auto;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    z-index: 999;
+    padding: 0;
+    background: none;
+    border: 0;
+    box-shadow: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  .pe-bar a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* anchors the WhatsApp button's ping ring */
+    position: relative;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    /* hides the label without removing it from the accessibility tree */
+    font-size: 0;
+    line-height: 0;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, .92);
+    -webkit-tap-highlight-color: transparent;
+    transition: transform .16s ease, box-shadow .16s ease, background-color .16s ease;
+  }
+
+  .pe-bar a:active { transform: scale(.93); }
+
+  .pe-bar a:focus-visible {
+    outline: 3px solid var(--hti-red, #e32129);
+    outline-offset: 3px;
+  }
+
+  .pe-bar svg { width: 25px; height: 25px; flex: none; }
+
+  /* WhatsApp leads: full size, its own green, and the softest shadow that
+     still lifts it off a photograph. */
+  .pe-bar .pe-bar-wa {
+    background: #21bf5b;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(14, 70, 38, .28), 0 12px 30px -12px rgba(14, 70, 38, .55);
+  }
+
+  .pe-bar .pe-bar-wa:active { background: #179546; }
+
+  /* Calling is the alternative, so it sits a size smaller and in the site's
+     own ink rather than competing for the same attention. */
+  .pe-bar .pe-bar-tel {
+    width: 46px;
+    height: 46px;
+    /* keeps the smaller button centred under the larger one */
+    align-self: center;
+    background: #1b1512;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(22, 18, 15, .26), 0 12px 28px -14px rgba(22, 18, 15, .6);
+  }
+
+  .pe-bar .pe-bar-tel:active { background: #000; }
+  .pe-bar .pe-bar-tel svg { width: 21px; height: 21px; }
+
+  /* One slow breath on the WhatsApp button, about every six seconds. Enough
+     to catch the eye once on a long page, quiet enough not to nag - and gone
+     entirely for anyone who has asked for less motion. */
+  .pe-bar .pe-bar-wa::after {
+    content: "";
+    position: absolute;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    border: 2px solid rgba(33, 191, 91, .55);
+    animation: pe-bar-ping 6s cubic-bezier(.2, .7, .3, 1) infinite;
+    pointer-events: none;
+  }
+
+  @keyframes pe-bar-ping {
+    0%, 72% { transform: scale(1); opacity: 0; }
+    76% { opacity: .85; }
+    100% { transform: scale(1.75); opacity: 0; }
+  }
+
+  .pe-inner { grid-template-columns: 1fr; gap: 30px; }
+  .pe { padding: 48px 20px; }
+  .pe-cta-wrap { padding: 22px 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pe-direct a,
+  .pe-cta-btn { transition: none; }
+
+  .pe-direct a:hover,
+  .pe-cta-btn:hover { transform: none; }
+
+  /* the contact buttons stay, the breath does not */
+  .pe-bar a { transition: none; }
+  .pe-bar .pe-bar-wa::after { animation: none; display: none; }
+}
+
+/* ---------------------------------------------------- email capture (subscribe.js) -- */
+
+/* Rendered by assets/subscribe.js, and only once the newsletter_subscribers
+   table exists - see the migration at the top of that file. */
+
+.sub-box {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 34px 24px;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 22px 40px;
+  align-items: center;
+}
+
+.sub-copy h3 {
+  font-size: 21px;
+  margin: 0 0 6px;
+  color: inherit;
+}
+
+.sub-copy p {
+  font-size: 15px;
+  line-height: 1.55;
+  margin: 0;
+  opacity: .82;
+  max-width: 52ch;
+}
+
+.sub-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.sub-input {
+  flex: 1 1 220px;
+  min-width: 0;
+  font: inherit;
+  font-size: 15.5px;
+  padding: 0 15px;
+  min-height: 48px;
+  border: 1.5px solid rgba(128, 120, 114, .5);
+  border-radius: 8px;
+  background: #fff;
+  color: #111;
+}
+
+.sub-input:focus {
+  outline: none;
+  border-color: var(--hti-red, #e32129);
+  box-shadow: 0 0 0 3px rgba(227, 33, 41, .16);
+}
+
+.sub-btn {
+  font: inherit;
+  font-weight: 700;
+  font-size: 15.5px;
+  min-height: 48px;
+  padding: 0 24px;
+  border: none;
+  border-radius: 10px;
+  background: var(--hti-red, #e32129);
+  color: #fff;
+  cursor: pointer;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0 1px 2px rgba(140, 16, 20, .22), 0 8px 20px -12px rgba(140, 16, 20, .7);
+  transition: transform .16s ease, filter .16s ease, box-shadow .16s ease;
+}
+
+.sub-btn:hover:not(:disabled) { filter: brightness(.94); transform: translateY(-1px); }
+
+.sub-btn:active:not(:disabled) {
+  filter: brightness(.88);
+  transform: translateY(0) scale(.99);
+  box-shadow: 0 1px 2px rgba(140, 16, 20, .26);
+}
+
+.sub-btn:focus-visible { outline: 3px solid #1b1512; outline-offset: 3px; }
+
+.sub-btn:disabled { opacity: .6; cursor: progress; box-shadow: none; transform: none; }
+
+.sub-msg { display: none; font-size: 14px; margin: 0; grid-column: 1 / -1; }
+.sub-msg.show { display: block; }
+.sub-msg.good { color: #1a8a4a; font-weight: 600; }
+.sub-msg.bad { color: var(--hti-red, #e32129); font-weight: 600; }
+
+.sub-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (max-width: 860px) {
+  .sub-box { grid-template-columns: 1fr; padding: 28px 20px; }
+}
+
+/* ------------------------------------------------------- motion & pointer -- */
+
+/* Everything above uses a small lift on hover and a slight press on tap. That
+   is the feedback that makes a button feel like a button - but it is also
+   exactly what someone who has asked their device to reduce motion does not
+   want, so the colour change carries the whole job for them instead. */
+@media (prefers-reduced-motion: reduce) {
+  .pe-direct a,
+  .pe-cta-btn,
+  .pe-bar a,
+  .sub-btn {
+    transition: background-color .16s ease, border-color .16s ease, filter .16s ease;
+  }
+
+  .pe-direct a:hover,
+  .pe-direct a:active,
+  .pe-cta-btn:hover,
+  .pe-cta-btn:active,
+  .pe-bar a:active,
+  .sub-btn:hover:not(:disabled),
+  .sub-btn:active:not(:disabled) {
+    transform: none;
+  }
+}

@@ -1,0 +1,1896 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    /* Someone who has signed in to the app on this device gets the app, not the
+       marketing page. Read synchronously so nothing paints first. Password-reset
+       links land here with a token in the hash and must be left alone. */
+    (function () {
+      try {
+        if (localStorage.getItem('hti_fcc_app_mode') !== '1') return;
+        if (/access_token|type=recovery/.test(location.hash)) return;
+        if (!localStorage.getItem('sb-ytthcgdsbfagvwcopoaj-auth-token')) return;
+        location.replace('fcc-app.html');
+      } catch (e) {}
+    })();
+  </script>
+  <title>Free Food Cost Calculator for Restaurants (₹ & 20+ Currencies) | HTI</title>
+  <meta name="description" content="Free food cost calculator for restaurants, cafes and hotels, in any currency. Get your food cost %, the formula and healthy benchmarks. No sign-up." />
+  <link rel="canonical" href="https://www.hti-india.com/food-cost-calculator.html" />
+  <script>(function(l){var p=l.pathname;if(p!=="/"&&!/\.html$/.test(p)&&!/\/$/.test(p))l.replace(p+".html"+l.search+l.hash)})(location)</script>
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Free Food Cost Calculator | HTI India" />
+  <meta property="og:description" content="Work out your food cost percentage in any currency: per dish or for a whole month. The formula, the healthy 25-35% range and a worked example, with a free calculator." />
+  <meta property="og:url" content="https://www.hti-india.com/food-cost-calculator.html" />
+  <meta property="og:image" content="https://www.hti-india.com/images/og/food-cost-calculator.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Free food cost percentage calculator from HTI India" />
+  <meta property="og:site_name" content="HTI India" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Free Food Cost Calculator | HTI India" />
+  <meta name="twitter:description" content="Work out your food cost percentage in any currency: per dish or for a whole month. The formula, the healthy 25-35% range and a worked example, with a free calculator." />
+  <meta name="twitter:image" content="https://www.hti-india.com/images/og/food-cost-calculator.jpg" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is food cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Food cost is the money you spend on the ingredients for a dish, and food cost percentage is that money shown as a share of what you charge. If a portion costs 120 to make and sells for 400, your food cost is 30%. The other 70% pays for staff, rent, energy and your profit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is food cost the same as food expenses?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In a restaurant, mostly yes. Food expenses usually means the same thing as food cost: the money you spend on ingredients. Food cost percentage shows those expenses as a share of your food sales — spend 30,000 on ingredients against 100,000 of food sales and your food cost is 30%. Staff, rent and energy are not food expenses; they are operating costs, and they are kept out so the number can be compared from month to month."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good food cost percentage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For most restaurants a healthy food cost is 25% to 35%. Under 25% is very profitable, but check your portion is not too small for what you charge. Between 35% and 40% is a bit high, and above 40% the dish is barely paying for itself. Fine dining and bars usually run lower, buffets and quick-service restaurants higher, so compare yourself against your own format rather than a single number."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you calculate food cost percentage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Divide what the ingredients cost you by what you charge, then multiply by 100. Ingredient cost ÷ Menu price × 100 = food cost %. A portion that costs 120 and sells at 400 is 120 ÷ 400 × 100, which is 30%. Use the menu price before tax, and cost the whole batch rather than guessing a single portion."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the food cost formula for a month?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "(Opening inventory + Purchases − Closing inventory) ÷ Food sales × 100. Opening stock of 50,000 plus 200,000 of purchases, minus 40,000 left at the end, means you used 210,000 of food. Against 650,000 of food sales, that is a 32.3% food cost for the month."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between ideal and actual food cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ideal food cost is what your recipes say the food should cost. Actual food cost is what your stock count and purchases show you really spent. The gap between them is wastage, over-portioning, staff meals, giveaways, theft or supplier price rises, so a growing gap is the first sign something in the kitchen needs attention."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I bring my food cost percentage down?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In this order, because that is the order that actually works: fix your portion sizes so every plate leaves the pass the same, cut the wastage and the trim you are throwing away, re-negotiate the two or three ingredients that make up most of the cost, and only then raise the price. Re-run the costing whenever a supplier rate moves — chicken going from ₹280 to ₹320 a kilo can move a dish two or three points on its own."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this food cost calculator really free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The calculator on this page and the full one behind it are both free, with no sign-up and no trial. You only make an account if you want your costings saved and synced to your phone, and even that is free."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it work in dollars, pounds, euros or dirhams?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Pick your currency above the calculator — it covers more than 20, from US dollars, euros and pounds to dirhams, riyals, rand and rupees. Food cost is a percentage, so the formula and the healthy ranges are the same in every country."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I enter an ingredient I buy by the kilo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In the calculator, enter the rate you buy at — say 400 per kg — then how much you actually use, say 1 kg for the batch. It works out the cost of that line for you. You can mix units freely: buy per kg and use grams, buy per litre and use millilitres."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "My recipe makes a batch, not one portion. What do I enter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cost the whole batch — all the chicken, all the butter, everything that goes in the pot — then say how many portions it serves. The calculator divides it and shows the cost of one portion. This is how professional kitchens cost, and it is far more accurate than guessing a single portion."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I include gas, staff salary and rent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not in the food cost itself. Food cost is only the ingredients, and keeping salaries and rent out is what makes the number comparable from dish to dish. Gas and electricity are a little different, because they are spent cooking that particular portion, so the calculator has an optional Overhead % field for them. Enter them as a percentage of the menu price — most kitchens are around 4% to 8% — and it comes off your profit per portion while your food cost percentage stays ingredients only."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I use the menu price with tax or without?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Without. GST, VAT or sales tax is not your money — you collect it and pass it on. Using the price with tax will make your food cost look better than it really is."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where are my saved dishes kept?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The calculator is free to use without an account. If you are not logged in, your dishes stay in this browser on this device only: we never receive them and cannot see them, and clearing your browser data will remove them. Log in — with a one-time code we email you — and they move to your account, where you can open them on any device. Only your own account can read them, because our database is set up so one account cannot see another account’s dishes."
+      }
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "HTI Food Cost Calculator",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any (web browser)",
+  "url": "https://www.hti-india.com/food-cost-calculator.html",
+  "installUrl": "https://www.hti-india.com/fcc-app.html",
+  "description": "A free online food cost calculator for restaurants, hotels and cafes, in any currency. Enter what you buy your ingredients at and what you charge, and it works out the cost of one portion, your food cost percentage and the profit left on every dish.",
+  "inLanguage": "en",
+  "browserRequirements": "Requires JavaScript. Works in any modern browser.",
+  "isAccessibleForFree": true,
+  "featureList": [
+    "Food cost percentage for any dish",
+    "Food cost percentage for a week or month from inventory and purchases",
+    "Works in more than 20 currencies",
+    "Cost a whole recipe batch and get the cost of one portion",
+    "Mixed buying and usage units (kg with g, litre with ml)",
+    "Optional overhead percentage for gas, electricity and packaging",
+    "Suggested menu price from a target food cost %",
+    "Benchmarks against the 25-35% healthy range",
+    "Saved dishes on any device, and CSV export"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "INR"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "HTI India",
+    "url": "https://www.hti-india.com/",
+    "logo": "https://www.hti-india.com/images/brand/hti-logo.png"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "HTI India", "item": "https://www.hti-india.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Free Tools", "item": "https://www.hti-india.com/food-cost-calculator.html" },
+    { "@type": "ListItem", "position": 3, "name": "Food Cost Calculator" }
+  ]
+}
+  </script>
+  <link rel="icon" href="images/brand/hti-favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --hti-bg: #f3f2ef;
+      --hti-black: #000;
+      --hti-red: #e31e24;
+      --hti-red2: #ff0000;
+      --hti-text: #111;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      background: var(--hti-bg);
+      color: var(--hti-text);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-weight: 700;
+      line-height: 1.15;
+    }
+
+
+    .btn-red {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--hti-red2);
+      color: #fff;
+      font-weight: 700;
+      border-radius: 8px;
+      padding: 12px 26px;
+      font-size: 17px;
+      line-height: 1;
+      transition: transform .15s ease, background .15s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-red:hover {
+      background: #d40f0f;
+      transform: translateY(-2px);
+    }
+
+    
+    /* ============ NAVBAR ============ */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--hti-bg);
+    }
+
+    .navbar::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #000, transparent);
+      transition: opacity .25s ease;
+    }
+
+    /* static line hides once the scroll progress line takes over */
+    .navbar.scrolled::after {
+      opacity: 0;
+    }
+
+    /* ---------- Scroll progress line (sits under the navbar) ---------- */
+    .scroll-progress {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(to right, var(--hti-red, #e32129), var(--hti-red2, #ff0000));
+      transform: scaleX(0);
+      transform-origin: left center;
+      opacity: 0;
+      transition: opacity .25s ease;
+      will-change: transform;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .navbar.scrolled .scroll-progress {
+      opacity: 1;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 72px;
+    }
+
+    .nav-logo img {
+      width: 52px;
+      height: auto;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+    }
+
+    .nav-item {
+      position: relative;
+      font-weight: 600;
+      font-size: 15px;
+      color: #111;
+      cursor: pointer;
+      padding: 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-item .caret {
+      width: 8px;
+      height: 8px;
+      border-right: 2px solid #333;
+      border-bottom: 2px solid #333;
+      transform: rotate(45deg);
+      margin-top: -3px;
+      transition: transform .2s;
+    }
+
+    .nav-item:hover .caret {
+      transform: rotate(-135deg);
+      margin-top: 3px;
+    }
+
+    .dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, .14);
+      padding: 10px;
+      min-width: 230px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all .2s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      z-index: 120;
+    }
+
+    .nav-item:hover .dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown a {
+      padding: 9px 12px;
+      border-radius: 7px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #222;
+    }
+
+    .dropdown a:hover {
+      background: var(--hti-bg);
+      color: var(--hti-red);
+    }
+
+    .dropdown a b {
+      display: block;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .dropdown a span {
+      font-size: 12px;
+      color: #777;
+      font-weight: 400;
+    }
+
+    .nav-contact {
+      background: var(--hti-red2);
+      color: #fff;
+      border-radius: 8px;
+      padding: 11px 22px;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .nav-contact:hover {
+      background: #d40f0f;
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    .nav-toggle span {
+      width: 26px;
+      height: 2px;
+      background: #000;
+      display: block;
+      transition: transform .25s ease, opacity .2s ease;
+    }
+
+    /* while the menu is open the hamburger becomes a cross, so there is an
+       obvious way to close it - and it sits in the sticky header, so it stays
+       reachable even when the menu panel is scrolled */
+    .nav-toggle.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .nav-toggle.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav-toggle.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    
+    /* ============ FOOTER (black) ============ */
+
+    .footer {
+      background: #000;
+      color: #fff;
+      padding: 60px 30px 30px;
+    }
+
+    .footer-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+    .footer-cols {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .footer-col h4 {
+      font-size: 17px;
+      color: #fff;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 14.5px;
+      color: #c7c7c7;
+      margin-bottom: 11px;
+      font-weight: 400;
+    }
+
+    .footer-col a:hover {
+      color: #fff;
+    }
+
+    .footer-div {
+      height: 1px;
+      background: #2a2a2a;
+      margin: 40px 0 30px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 16px;
+    }
+
+    .footer-social a {
+      width: 26px;
+      height: 26px;
+      color: #fff;
+      opacity: .85;
+    }
+
+    .footer-social a:hover {
+      opacity: 1;
+      color: var(--hti-red);
+    }
+
+    .footer-contact h3 {
+      font-size: 20px;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .footer-contact span {
+      color: var(--hti-red);
+    }
+
+    .footer-brand img {
+      width: 70px;
+    }
+
+    .footer-copy {
+      text-align: center;
+      color: #8a8a8a;
+      font-size: 13px;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #2a2a2a;
+    }
+
+    
+    /* ============ RESPONSIVE (nav + footer) ============ */
+@media(max-width:960px) {
+  .nav-menu {
+        position: fixed;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 16px 24px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, .12);
+        display: none;
+        max-height: calc(100vh - 72px);
+        overflow-y: auto;
+      }
+  .nav-menu.open {
+        display: flex;
+      }
+  .nav-item {
+        width: 100%;
+        flex-wrap: wrap;
+      }
+  .dropdown {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        padding: 4px 0 4px 14px;
+        min-width: auto;
+        width: 100%;
+        display: none;
+      }
+  .nav-item.open .dropdown {
+        display: flex;
+      }
+  /* a tap leaves :hover stuck on touch devices, which used to point the
+         caret up while the panel stayed shut - drive it from the real state */
+      .nav-item:hover .caret {
+        transform: rotate(45deg);
+        margin-top: -3px;
+      }
+  .nav-item.open .caret {
+        transform: rotate(-135deg);
+        margin-top: 3px;
+      }
+  /* touch targets: every dropdown link is at least 44px tall */
+      .dropdown a {
+        min-height: 44px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+  .nav-toggle {
+        display: flex;
+      }
+  .footer-cols {
+        grid-template-columns: 1fr 1fr;
+      }
+}
+
+@media(max-width:600px) {
+  .footer-cols {
+        grid-template-columns: 1fr;
+      }
+}
+
+    /* ============ FOOD COST CALCULATOR ============ */
+  :root{
+    --red:var(--hti-red);
+    --ink:#111;
+    --muted:#6b6b6b;
+    --line:#e2e0dc;
+    --card:#fff;
+    --good:#1a7f4b;
+    --warn:#c47a00;
+    --bad:#c62828;
+    --ease-out:cubic-bezier(.22,1,.36,1);
+  }
+  .fcc-wrap{max-width:940px;margin:0 auto;padding:0 24px}
+
+  /* the intro is now the .hero band further down */
+
+  /* ---------- app gateway ----------
+     The costing tool itself moved to fcc-app.html, so this card is the one
+     action the page asks for. It has to out-weigh everything below the hero,
+     hence the dark ground: the rest of the page is cards on light grey. */
+  .app-gate{position:relative;background:var(--ink);color:#fff;border-radius:16px;
+    padding:52px 40px;margin:46px 0 8px;overflow:hidden;isolation:isolate}
+  .app-gate::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+    background:radial-gradient(680px 340px at 82% -10%,rgba(227,30,36,.34),transparent 62%)}
+  .app-gate::after{content:"";position:absolute;left:0;right:0;top:0;height:4px;
+    background:linear-gradient(to right,var(--red),#ff5a60)}
+  .ag-inner{max-width:620px}
+  .ag-tag{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.14em;
+    text-transform:uppercase;color:#ff8a8f;background:rgba(227,30,36,.16);
+    border:1px solid rgba(227,30,36,.4);border-radius:30px;padding:6px 15px;margin-bottom:16px}
+  .app-gate h2{font-size:clamp(1.75rem,4vw,2.5rem);font-weight:800;letter-spacing:-.025em;
+    line-height:1.1;color:#fff}
+  .app-gate h2 em{font-style:normal;background:linear-gradient(120deg,#ff5a60,var(--red) 45%,#ff8a8f);
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .ag-lede{font-size:16.5px;line-height:1.65;color:rgba(255,255,255,.76);font-weight:500;
+    margin-top:14px;max-width:46ch}
+
+  .ag-cta{display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    margin-top:28px;padding:18px 38px;border-radius:10px;background:var(--red);color:#fff;
+    font-size:17px;font-weight:800;letter-spacing:-.01em;
+    box-shadow:0 14px 34px -12px rgba(227,30,36,.85);
+    transition:background .15s,transform .15s,box-shadow .2s}
+  .ag-cta:hover{background:#ff2a30;transform:translateY(-2px);
+    box-shadow:0 20px 42px -12px rgba(227,30,36,.95)}
+  .ag-cta:active{transform:translateY(0)}
+
+  .ag-list{list-style:none;margin:30px 0 0;padding:26px 0 0;display:grid;gap:14px;
+    border-top:1px solid rgba(255,255,255,.14)}
+  .ag-list li{display:flex;align-items:flex-start;gap:12px;font-size:15px;line-height:1.5;
+    font-weight:600;color:rgba(255,255,255,.9)}
+  .ag-list svg{flex:0 0 auto;width:21px;height:21px;margin-top:1px;fill:none;
+    stroke:#4ade80;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+  .ag-fine{margin-top:24px;font-size:12.5px;font-weight:600;color:rgba(255,255,255,.5)}
+
+  /* the repeat further down the page: same card, quieter */
+  .ag-slim{padding:38px 40px;margin:56px 0 0;text-align:center}
+  .ag-slim .ag-inner{max-width:none}
+  .ag-slim h2{font-size:clamp(1.4rem,3vw,1.9rem)}
+  .ag-slim .ag-lede{margin-left:auto;margin-right:auto}
+  .ag-cta-sm{margin-top:22px;padding:14px 30px;font-size:15.5px}
+
+  @media(max-width:640px){
+    .app-gate{padding:36px 22px;border-radius:14px}
+    .ag-slim{padding:30px 22px}
+    .ag-cta{width:100%;padding:17px 22px}
+  }
+
+  .btn{font-family:inherit;font-weight:700;font-size:15px;cursor:pointer;border-radius:8px;
+    padding:12px 22px;border:none;transition:background .15s,transform .15s}
+
+  /* ---------- how the sum works ---------- */
+  .method{padding-top:64px}
+  .method-body{background:#fff;border:1px solid var(--line);border-radius:14px;padding:30px 32px}
+  .method-body p{font-size:15.5px;line-height:1.75;color:#3a3733;font-weight:500}
+  .method-body p+p{margin-top:16px}
+  .method-body b{font-weight:800;color:var(--ink)}
+  .worked{margin:22px 0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fbfaf9}
+  .worked-head{background:#f2efea;border-bottom:1px solid var(--line);padding:13px 18px;
+    font-size:12px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+  .worked ul{list-style:none;margin:0;padding:6px 18px}
+  .worked li{display:flex;justify-content:space-between;align-items:baseline;gap:18px;
+    padding:10px 0;border-bottom:1px dashed var(--line);font-size:14.5px;font-weight:600;line-height:1.45}
+  .worked li:last-child{border-bottom:none}
+  .worked li b{flex:0 0 auto;font-weight:800;white-space:nowrap}
+  .worked li.sum{border-top:2px solid var(--ink);border-bottom:none;margin-top:4px;padding-top:12px}
+  .worked li.sum span,.worked li.sum b{font-weight:800;color:var(--ink)}
+  .worked li.answer b{color:var(--good);font-size:17px}
+  @media(max-width:820px){
+    .method{padding-top:48px}
+    .method-body{padding:22px 18px}
+    .worked ul{padding:4px 14px}
+    .worked li{gap:12px;font-size:13.5px}
+  }
+
+  /* ---------- bands / faq / cta ---------- */
+  .learn h2{font-size:29px;font-weight:800;margin:56px 0 18px}
+  .bands{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .band{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px;border-top:4px solid}
+  .band b{display:block;font-size:20px;font-weight:800;margin-bottom:4px}
+  .band span{font-size:13.5px;font-weight:600;color:var(--muted)}
+
+  .faq-band{background:#e6e1d9;margin-top:60px;padding:56px 0}
+  .faq-band h2{font-size:29px;font-weight:800;text-align:center;margin-bottom:28px}
+  .faq-band h2 em{font-style:normal;color:var(--red)}
+  .faq-list{max-width:820px;margin:0 auto}
+  .faq-item{background:#fff;border:1px solid #e4ded6;border-radius:14px;margin-bottom:14px;
+    overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.05);
+    transition:box-shadow .35s var(--ease-out),border-color .35s ease}
+  .faq-item.open{border-color:rgba(227,30,36,.35);box-shadow:0 22px 44px -22px rgba(0,0,0,.3)}
+  .faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:20px 24px;
+    font-family:inherit;font-size:16px;font-weight:700;color:#111;display:flex;
+    justify-content:space-between;align-items:center;gap:16px;min-height:44px}
+  .faq-q .sign{color:var(--red);font-size:24px;font-weight:800;flex:0 0 auto;line-height:1;
+    transition:transform .3s var(--ease-out)}
+  .faq-item.open .faq-q .sign{transform:rotate(180deg)}
+  .faq-answer{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s var(--ease-out)}
+  .faq-item.open .faq-answer{grid-template-rows:1fr}
+  .faq-answer>div{overflow:hidden}
+  .faq-answer p{padding:0 24px 22px;font-size:15px;color:#555;line-height:1.7}
+  @media (prefers-reduced-motion:reduce){.faq-answer,.faq-q .sign{transition:none}}
+
+  .fcc-cta{background:#111;color:#fff;border-radius:14px;padding:40px;margin:56px 0 72px;
+    display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap}
+  .fcc-cta h2{font-size:26px;font-weight:800;max-width:22ch}
+  .fcc-cta p{color:#bdbdbd;font-size:15.5px;margin-top:10px;max-width:46ch;font-weight:500}
+
+  /* ---------- look & motion: brought in line with the programme pages ----------
+     The section heads below reuse .sec-head / .sec-tag, which is what every
+     programme page uses. That is not only for consistency: .sec-head is one of
+     the selectors assets/motion.css already animates, so both headings now rise
+     and fade on scroll the way the rest of the site does. The FAQ heading
+     previously matched no motion selector at all and simply snapped in. */
+  .sec-head{text-align:center;max-width:640px;margin:0 auto 32px}
+  .sec-tag{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--red);background:rgba(227,30,36,.08);
+    border:1px solid rgba(227,30,36,.22);border-radius:30px;padding:6px 15px;margin-bottom:14px}
+  .sec-head h2{font-size:clamp(1.6rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.02em;color:var(--ink)}
+  .sec-head h2 em{font-style:normal;color:var(--red)}
+  .sec-head p{margin:12px auto 0;color:var(--muted);font-size:15.5px;line-height:1.7;font-weight:500}
+
+
+  /* ---------- the calculator, on the page ----------
+     Someone searching "food cost calculator" wants to calculate, not to read
+     about calculating, and the full costing tool is a click away behind a
+     noindex URL. This section answers the query where the visitor lands. */
+  .qcalc{padding-top:34px}
+  .qc-head{margin-bottom:24px}
+  .qc-head p{margin-top:9px}
+  .qc-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+  .qc-form{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+  .qc-fld{margin-bottom:16px}
+  .qc-fld:last-child{margin-bottom:0}
+  .qc-fld label{display:block;font-size:11.5px;font-weight:800;letter-spacing:.05em;
+    text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+  .qc-fld label em{font-style:normal;margin-left:6px;padding:2px 7px;border-radius:20px;
+    background:#f1efeb;color:var(--muted);font-size:9.5px;letter-spacing:.04em}
+  /* the long definition lives behind this, so the field stays one short line */
+  .qc-hlp{width:18px;height:18px;margin-left:7px;vertical-align:-4px;
+    display:inline-grid;place-items:center;padding:0;
+    border:1px solid var(--line);background:var(--card);color:var(--muted);
+    border-radius:50%;font-family:inherit;font-size:11px;font-weight:800;line-height:1;
+    cursor:pointer;transition:border-color .15s ease,color .15s ease}
+  .qc-hlp:hover,.qc-hlp[aria-expanded="true"]{border-color:var(--red);color:var(--red)}
+  .qc-hlp:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+  .qc-note{background:#fbfaf8;border:1px solid var(--line);border-radius:10px;
+    padding:10px 12px;margin-top:8px;font-size:12.5px;line-height:1.55;
+    color:var(--muted);font-weight:500}
+  .qc-affix{position:relative;display:block}
+  .qc-affix input{width:100%;font-family:inherit;font-size:17px;font-weight:700;color:var(--ink);
+    background:#fbfaf8;border:1px solid var(--line);border-radius:10px;padding:13px 14px;
+    transition:border-color .15s ease,box-shadow .15s ease}
+  .qc-affix input:focus{outline:0;border-color:var(--red);box-shadow:0 0 0 3px rgba(227,30,36,.13)}
+  .qc-affix .pre,.qc-affix .post{position:absolute;top:50%;transform:translateY(-50%);
+    color:var(--muted);font-weight:700;pointer-events:none}
+  .qc-affix .pre{left:13px}
+  .qc-affix .post{right:14px}
+  .qc-affix .pre~input{padding-left:31px}
+  /* the currency picker sits above the two money fields it labels */
+  .qc-cur select{width:100%;font-family:inherit;font-size:15px;font-weight:700;color:var(--ink);
+    background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23e31e24' stroke-width='2'/%3E%3C/svg%3E") no-repeat right 14px center;
+    border:1.5px solid var(--line);border-radius:10px;padding:11px 38px 11px 13px;
+    -webkit-appearance:none;appearance:none;cursor:pointer}
+  .qc-cur select:focus{outline:0;border-color:var(--red);box-shadow:0 0 0 3px rgba(227,30,36,.13)}
+  .qc-affix.suf input{padding-right:32px}
+  /* the native spinner lands exactly where the % sign is */
+  .qc-affix input::-webkit-outer-spin-button,
+  .qc-affix input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+  .qc-affix input{-moz-appearance:textfield;appearance:textfield}
+  .qc-hint{font-size:12.5px;line-height:1.55;color:var(--muted);font-weight:500;margin-top:7px}
+  .qc-hint b{font-weight:700;color:#444}
+
+  .qc-out{background:var(--ink);color:#fff;border-radius:16px;padding:26px 22px;text-align:center;
+    position:sticky;top:96px}
+  .qc-cap{display:block;font-size:10.5px;font-weight:800;letter-spacing:.14em;
+    text-transform:uppercase;color:rgba(255,255,255,.5)}
+  .qc-big{font-size:clamp(3rem,8vw,4.2rem);font-weight:800;letter-spacing:-.04em;line-height:1;
+    margin-top:10px}
+  .qc-big small{font-size:.42em;font-weight:700;margin-left:2px}
+  .qc-verdict{font-size:15px;font-weight:700;margin-top:12px;min-height:1.4em}
+  .qc-bar{display:flex;height:12px;border-radius:999px;overflow:hidden;
+    background:rgba(255,255,255,.12);margin-top:20px}
+  .qc-bar i{display:block;transition:width .3s var(--ease-out)}
+  .qc-bar .f{background:var(--red)}
+  .qc-bar .o{background:#e0a52b}
+  .qc-bar .p{background:#25a862}
+  .qc-lines{list-style:none;margin:18px 0 0;padding:16px 0 0;
+    border-top:1px solid rgba(255,255,255,.16);display:grid;gap:9px;text-align:left}
+  .qc-lines li{display:flex;justify-content:space-between;gap:14px;font-size:13.5px;font-weight:600;
+    color:rgba(255,255,255,.72)}
+  .qc-lines li b{font-weight:800;color:#fff}
+  .qc-lines li.key{font-size:15px;color:#fff}
+  .qc-more{margin-top:24px;text-align:center}
+  .qc-more p{max-width:54ch;margin:0 auto;font-size:14.5px;line-height:1.65;
+    color:var(--muted);font-weight:500}
+  .qc-cta{display:inline-flex;align-items:center;gap:9px;margin-top:15px;
+    padding:15px 30px;border-radius:10px;
+    background:linear-gradient(135deg,var(--red),#ff4a51);color:#fff;
+    font-weight:800;font-size:15.5px;letter-spacing:-.01em;
+    box-shadow:0 14px 30px -12px rgba(227,33,41,.9);
+    transition:transform .15s ease,box-shadow .2s ease}
+  .qc-cta:hover{transform:translateY(-2px);box-shadow:0 20px 40px -14px rgba(227,33,41,1)}
+  .qc-cta:active{transform:translateY(0)}
+  .qc-more b{display:block;margin-top:11px;font-size:12.5px;font-weight:600;color:var(--muted)}
+  @media (prefers-reduced-motion:reduce){.qc-cta,.qc-cta:hover{transition:none;transform:none}}
+
+  @media(max-width:820px){
+    .qcalc{padding-top:26px}
+    .qc-grid{grid-template-columns:1fr}
+    /* Fields first, answer under them. This was the other way round while the
+       hero was tall enough to push the form off the fold; the hero is short
+       now, so the natural order reads better: you fill it in, you scroll a
+       little, you get the number. */
+    .qc-out{position:static;order:0}
+    .qc-big{font-size:3.2rem}
+  }
+  @media (prefers-reduced-motion:reduce){.qc-bar i{transition:none}}
+
+  /* benchmark cards: same four, given room to breathe */
+  .learn{padding-top:64px}
+  .learn h2{margin:0}
+  .bands{gap:16px}
+  .band{padding:22px 20px;border-radius:12px;border-top-width:5px;
+    transition:box-shadow .3s var(--ease-out),border-color .3s ease}
+  .band b{font-size:22px;letter-spacing:-.01em;margin-bottom:6px}
+  .band span{font-size:14px;line-height:1.55}
+  /* no transform here on purpose - motion.js owns transform on .why-item
+     and declares it !important, so a hover transform would never apply */
+  .band:hover{box-shadow:0 16px 30px -20px rgba(48,30,18,.45)}
+
+  .faq-band{margin-top:72px;padding:64px 0}
+  .fcc-cta{padding:44px;border-radius:16px;margin:64px 0 76px}
+  .fcc-cta h2{font-size:clamp(1.35rem,2.8vw,1.7rem);letter-spacing:-.01em}
+
+}
+
+  @media (prefers-reduced-motion:reduce){
+    .band{transition:none}
+  }
+
+  @media(max-width:820px){
+    .learn{padding-top:48px}
+    .faq-band{margin-top:56px;padding:52px 0}
+    .fcc-cta{padding:30px 22px;margin:48px 0 60px}
+    .sec-head{margin-bottom:26px}
+  }
+
+  /* ---------- the dark opening, borrowed from the POSH page ----------
+     Same three ingredients that page uses: an ink band, one soft red radial
+     bloom behind the type, and a faint grid masked off at the edges so it
+     fades out instead of stopping at a hard line. */
+  .hero{position:relative;background:var(--ink);color:#fff;overflow:hidden;isolation:isolate;
+    padding:74px 24px 86px;margin-bottom:38px}
+  .hero::before{content:"";position:absolute;top:42%;left:26%;width:760px;height:760px;
+    transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(227,33,41,.34),transparent 62%);
+    filter:blur(52px);z-index:-1;pointer-events:none}
+  .hero::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+    background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+    background-size:60px 60px;
+    -webkit-mask-image:radial-gradient(ellipse 75% 70% at 35% 45%,#000,transparent 78%);
+    mask-image:radial-gradient(ellipse 75% 70% at 35% 45%,#000,transparent 78%)}
+  .hero-inner{max-width:940px;margin:0 auto;padding:0 24px}
+
+  /* filled gradient pill with a glow under it, not the outline pill */
+  /* An eyebrow, not a button. This used to be a filled red pill with a glow
+     under it, which read as the primary action and out-shouted the real CTA
+     below. Exactly one filled red element is allowed in this hero, and it is
+     the button that opens the calculator. */
+  .hero-tag{display:inline-block;background:rgba(227,30,36,.16);color:#ff8a8f;
+    border:1px solid rgba(227,30,36,.42);
+    font-size:10.5px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;
+    padding:6px 15px;border-radius:30px;margin-bottom:20px}
+
+  .hero h1{font-size:clamp(2.2rem,5.6vw,3.4rem);font-weight:800;line-height:1.06;
+    letter-spacing:-.03em;color:#fff;text-wrap:balance}
+  /* the accent word carries the gradient rather than a flat red */
+  .hero h1 em{font-style:normal;background:linear-gradient(120deg,#ff5a60,var(--red) 45%,#ff8a8f);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:var(--red)}
+  .hero-lede{font-size:17.5px;line-height:1.7;color:rgba(255,255,255,.78);max-width:56ch;margin-top:16px}
+
+  /* This page carries no fixed WhatsApp / Call bar, so the room that
+     assets/enquiry.css reserves for one has to go with it, or every phone gets
+     72px of dead space under the footer. */
+  /* html body, not body: assets/enquiry.css is linked after this block, so a
+     bare body selector would lose the tie. */
+  @media (max-width:860px){ html body{padding-bottom:0} }
+
+  /* the pull-plate: the formula the whole tool is built on */
+  .hero-kicker{display:inline-block;margin-top:26px;padding:15px 24px;
+    font-size:clamp(15px,1.9vw,18px);font-weight:700;color:#fff;
+    background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);
+    border-left:3px solid var(--red);border-radius:4px 12px 12px 4px;
+    box-shadow:0 22px 44px -22px rgba(0,0,0,.9)}
+  .hero-kicker span{color:rgba(255,255,255,.5);font-weight:600}
+  .hero-app{display:block;margin-top:24px}
+  /* The primary action, and the only filled red thing in the hero. It was a
+     plain white slab while the eyebrow above it carried the brand gradient,
+     so the eye landed on a label instead of on the button. */
+  .hero-app a{display:inline-flex;align-items:center;gap:9px;padding:16px 32px;border-radius:10px;
+    background:linear-gradient(135deg,var(--red),#ff4a51);color:#fff;
+    font-weight:800;font-size:16.5px;letter-spacing:-.01em;
+    box-shadow:0 14px 34px -10px rgba(227,33,41,.9);
+    transition:transform .15s ease,box-shadow .2s ease}
+  .hero-app a:hover{transform:translateY(-2px);box-shadow:0 22px 46px -12px rgba(227,33,41,1)}
+  .hero-app a:active{transform:translateY(0)}
+  /* the secondary route: the sum can also be done without leaving the page */
+  .hero-app a.alt{background:none;box-shadow:none;border-radius:0;padding:0;
+    margin-left:20px;font-size:14.5px;font-weight:700;color:rgba(255,255,255,.72);
+    border-bottom:1px solid rgba(255,255,255,.32)}
+  .hero-app a.alt:hover{transform:none;box-shadow:none;color:#fff;border-bottom-color:#fff}
+  .hero-app b{display:block;font-size:12px;font-weight:600;color:rgba(255,255,255,.6);margin-top:10px}
+  @media(max-width:520px){
+    .hero-app a.alt{display:inline-block;margin:14px 0 0}
+  }
+
+  /* Transform-only, so the heading is painted at first frame: this is the
+     LCP element and fading it in would push Largest Contentful Paint out. */
+  @keyframes heroRise{from{transform:translateY(16px)}to{transform:none}}
+  @keyframes heroFade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  .hero-inner{animation:heroRise .55s var(--ease-out) both}
+  .hero-kicker{animation:heroFade .6s var(--ease-out) .22s both}
+
+  /* ---------- primary buttons get the gradient and the glow ---------- */
+  .btn-red{background:linear-gradient(135deg,var(--red),#ff4a51);color:#fff;
+    box-shadow:0 14px 30px -12px rgba(227,33,41,.9);
+    transition:transform .25s var(--ease-out),box-shadow .25s var(--ease-out)}
+  .btn-red:hover{transform:translateY(-2px);box-shadow:0 22px 44px -14px rgba(227,33,41,1)}
+
+  /* ---------- benchmark cards: the whole card carries its verdict ---------- */
+  .bands{gap:16px}
+  .band{position:relative;padding:24px 20px 22px;border-radius:14px;border:1px solid var(--line);
+    border-top:5px solid;transition:box-shadow .3s var(--ease-out),border-color .3s ease}
+  .band i{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;
+    font-style:normal;font-size:15px;font-weight:800;color:#fff;margin-bottom:13px}
+  .band b{display:block;font-size:22px;font-weight:800;letter-spacing:-.01em;margin-bottom:6px}
+  .band span{font-size:14px;line-height:1.55;font-weight:600;color:var(--muted)}
+  .band.t-good{border-top-color:var(--good);background:linear-gradient(#f2faf5,#fff 62%)}
+  .band.t-good i{background:linear-gradient(135deg,var(--good),#25a862);
+    box-shadow:0 10px 18px -10px rgba(26,127,75,.9)}
+  .band.t-warn{border-top-color:var(--warn);background:linear-gradient(#fdf7ea,#fff 62%)}
+  .band.t-warn i{background:linear-gradient(135deg,var(--warn),#e0a52b);
+    box-shadow:0 10px 18px -10px rgba(196,122,0,.9)}
+  .band.t-bad{border-top-color:var(--bad);background:linear-gradient(#fdf2f2,#fff 62%)}
+  .band.t-bad i{background:linear-gradient(135deg,var(--bad),#e04b4b);
+    box-shadow:0 10px 18px -10px rgba(198,40,40,.9)}
+  /* no transform on hover - motion.js owns transform on .why-item, !important */
+  .band:hover{box-shadow:0 18px 34px -20px rgba(48,30,18,.5)}
+
+  /* ---------- closing CTA gets the same bloom as the hero ---------- */
+  .fcc-cta{position:relative;overflow:hidden;isolation:isolate}
+  .fcc-cta::before{content:"";position:absolute;top:50%;left:50%;width:620px;height:620px;
+    transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(227,33,41,.28),transparent 62%);
+    filter:blur(46px);z-index:-1;pointer-events:none}
+
+  @media (prefers-reduced-motion:reduce){
+    .hero-inner,.hero-kicker{animation:none}
+    .btn-red,.band{transition:none}
+    .btn-red:hover{transform:none}
+  }
+
+  /* the slim hero: a title and a line, with the calculator directly under it */
+  .hero-slim{padding:44px 24px 40px;margin-bottom:0}
+  .hero-slim .hero-lede{font-size:16.5px;max-width:48ch;margin-top:12px}
+  .hero-slim .hero-lede b{color:#fff;font-weight:800}
+
+  @media(max-width:820px){
+    .hero{padding:52px 20px 62px;margin-bottom:28px}
+    .hero-slim{padding:34px 20px 32px;margin-bottom:0}
+    .hero-inner{padding:0}
+    .hero-kicker{padding:13px 18px}
+  }
+
+  @media(max-width:820px){
+    .bands{grid-template-columns:1fr 1fr}
+    .learn h2,.faq-band h2{font-size:24px}
+    .fcc-cta{padding:26px}
+  }
+
+  /* ---------- from the blog: the food cost post, English and Hindi ----------
+     Two cards, one article. They sit under the FAQ so the page answers the
+     query first and only then offers the longer read. */
+
+  /* ---------- food cost for a period ---------- */
+  .formula{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 10px;background:#111;color:#fff;
+    border-radius:12px;padding:16px 20px;margin-bottom:20px;font-size:15px;line-height:1.5}
+  .formula span{color:rgba(255,255,255,.65);font-weight:700}
+  .formula b{font-weight:800;color:#fff}
+  .pc-grid{margin:24px 0}
+  .pc-grid .qc-form{background:#fbfaf9}
+  .method-body h3{font-size:19px;font-weight:800;color:var(--ink);margin:26px 0 10px}
+  .fcc-more{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:10px}
+  .fcc-more a{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:14px 18px;font-weight:700;font-size:15px;color:var(--ink)}
+  .fcc-more a:hover,.fcc-more a:focus-visible{border-color:var(--red);color:var(--red)}
+  .fcc-more a span{display:block;font-weight:500;font-size:13.5px;color:var(--muted);margin-top:3px}
+  .fcc-blog{padding-top:8px}
+  .fcc-blog-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .fcc-blog-card{display:flex;flex-direction:column;background:var(--card);
+    border:1px solid var(--line);border-radius:14px;overflow:hidden;color:inherit;
+    transition:transform .22s var(--ease-out),box-shadow .22s var(--ease-out)}
+  .fcc-blog-card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.10)}
+  .fcc-blog-card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+  .fcc-blog-body{padding:20px 20px 22px}
+  .fcc-blog-lang{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--red);margin-bottom:9px}
+  /* Devanagari does not take letter-spacing or casing the way Latin does */
+  .fcc-blog-lang[lang=hi]{letter-spacing:normal;text-transform:none;font-size:12px}
+  .fcc-blog-card h3{font-size:18px;font-weight:800;letter-spacing:-.01em;line-height:1.35;
+    color:var(--ink);margin-bottom:9px}
+  .fcc-blog-card p{color:var(--muted);font-size:14.5px;line-height:1.65;font-weight:500}
+  .fcc-blog-more{display:inline-block;margin-top:14px;font-size:13.5px;font-weight:700;color:var(--red)}
+
+  @media(max-width:760px){
+    .fcc-blog-grid{grid-template-columns:1fr}
+  }
+
+  </style>
+  <!-- shared motion layer: progressive enhancement, see assets/motion.css -->
+  <script>document.documentElement.className += ' mo';</script>
+  <link rel="stylesheet" href="assets/motion.css" />
+  <link rel="stylesheet" href="assets/polish.css" />
+  <link rel="stylesheet" href="assets/enquiry.css" />
+  <script src="assets/motion.js" defer></script>
+</head>
+
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img fetchpriority="high" width="240" height="182"
+          src="images/brand/hti-logo-nav.webp"
+          alt="HTI Logo" /></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
+      <nav class="nav-menu" id="navMenu">
+        <div class="nav-item">Restaurants &amp; QSRs<span class="caret"></span>
+          <div class="dropdown">
+            <div class="dd-head" style="font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#9b9b9b;padding:9px 12px 3px;">Staff Training App</div>
+            <a href="a-la-class.html"><b>&Agrave; La Class <small style="display:inline-block;vertical-align:2px;margin-left:6px;font-size:9.5px;font-weight:800;letter-spacing:.08em;color:#fff;background:#e31e24;border-radius:4px;padding:2px 5px;line-height:1.2;">NEW</small></b><span>2-minute daily lessons, on your staff's phones</span></a>
+            <div class="dd-head" style="font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#9b9b9b;padding:9px 12px 3px;">Service Team</div>
+            <a href="super.html"><b>SUPER</b><span>Waiters, stewards, captains, hostess</span></a>
+            <a href="support.html"><b>SUPPORT</b><span>Same roles &mdash; pre-opening restaurant</span></a>
+            <a href="icedt.html"><b>ICEDT</b><span>Counter executives, sales boys, servers</span></a>
+            <div class="dd-head" style="font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#9b9b9b;padding:9px 12px 3px;">Guest Experience</div>
+            <a href="icare.html"><b>iCARE</b><span>Customer service execs, supervisors</span></a>
+            <a href="vow.html"><b>Vow to Wow</b><span>Frontline reps, team leaders</span></a>
+            <div class="dd-head" style="font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#9b9b9b;padding:9px 12px 3px;">Managers</div>
+            <a href="ramp.html"><b>RAMP</b><span>Restaurant managers &amp; supervisors</span></a>
+            <a href="training-by-role.html" style="color:#e31e24;font-weight:700;text-align:left;border-top:1px solid #eee;margin-top:6px;padding-top:10px;">Find training by role &rarr;</a>
+            <a href="restaurants.html" class="see-all" style="color:#e31e24;font-weight:700;text-align:left;">See All</a>
+          </div>
+        </div>
+        <div class="nav-item">Hotels<span class="caret"></span>
+          <div class="dropdown">
+            <div class="dd-head" style="font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#9b9b9b;padding:9px 12px 3px;">Rooms &amp; Front Desk</div>
+            <a href="fort.html"><b>FORT</b><span>Receptionists, FO executives, GRE, bell boys</span></a>
+            <a href="hotcar.html"><b>HOT-CAR</b><span>Housekeeping attendants &amp; supervisors</span></a>
+            <div class="dd-head" style="font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#9b9b9b;padding:9px 12px 3px;">Kitchen</div>
+            <a href="kmt.html"><b>KMT</b><span>Chefs, sous chefs, kitchen supervisors</span></a>
+            <div class="dd-head" style="font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#9b9b9b;padding:9px 12px 3px;">Whole Property</div>
+            <a href="hotel-shot.html"><b>Hotel SHOT</b><span>Every hotel role &mdash; F&amp;B to security</span></a>
+            <div class="dd-head" style="font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#9b9b9b;padding:9px 12px 3px;">Villas &amp; Homestays</div>
+            <a href="cup.html"><b>CUP</b><span>Caretakers of villas, homestays, guesthouses</span></a>
+            <div class="dd-head" style="font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#9b9b9b;padding:9px 12px 3px;">Grooming &amp; Management</div>
+            <a href="class.html"><b>CLASS</b><span>Guest-facing &amp; corporate professionals</span></a>
+            <a href="mdp.html"><b>MDP</b><span>Newly promoted &amp; mid-level managers</span></a>
+            <a href="training-by-role.html" style="color:#e31e24;font-weight:700;text-align:left;border-top:1px solid #eee;margin-top:6px;padding-top:10px;">Find training by role &rarr;</a>
+            <a href="hotels.html" class="see-all" style="color:#e31e24;font-weight:700;text-align:left;">See All</a>
+          </div>
+        </div>
+        <div class="nav-item">Offices &amp; Retail<span class="caret"></span>
+          <div class="dropdown">
+            <a href="post.html"><b>POST</b><span>Corporate pantry staff &amp; attendants</span></a>
+            <a href="top.html"><b>TOP</b><span>Peons, office boys, support staff</span></a>
+            <a href="training-by-role.html" style="color:#e31e24;font-weight:700;text-align:left;border-top:1px solid #eee;margin-top:6px;padding-top:10px;">Find training by role &rarr;</a>
+            <a href="offices.html" class="see-all" style="color:#e31e24;font-weight:700;text-align:left;">See All</a>
+          </div>
+        </div>
+        <div class="nav-item">More<span class="caret"></span>
+          <div class="dropdown">
+            <div style="font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#8a857d;padding:4px 0 6px;">Free Tools</div>
+            <a href="food-cost-calculator.html"><b>Food Cost Calculator</b><span>Free tool &mdash; work out your food cost %</span></a>
+            <a href="restaurant-cost-calculator.html"><b>Restaurant Cost Calculator</b><span>Free tool &mdash; prime cost, profit &amp; break-even</span></a>
+            <div style="border-top:1px solid #eee;margin:8px 0 6px;"></div>
+            <a href="trainers.html"><b>Our Trainers</b><span>The people who run the sessions</span></a>
+            <a href="brands.html"><b>Our Brands</b><span>HTI, Woosh Biz, Star, Lead, Dox &amp; T3</span></a>
+            <a href="lead.html"><b>Lead by HTI</b><span>Train the trainer, presentation &amp; soft skills</span></a>
+            <a href="leadership-development.html"><b>Leadership Development</b><span>Senior managers &amp; future leaders</span></a>
+            <a href="professional-etiquette.html"><b>Professional Etiquette</b><span>Corporate &amp; client-facing professionals</span></a>
+            <a href="posh-training.html"><b>POSH Training</b><span>All employees, managers &amp; ICC members</span></a>
+            <a href="fssai-training.html"><b>FSSAI Training</b><span>Food handlers &amp; food safety supervisors</span></a>
+            <a href="https://wooshbiz.com/" target="_blank" rel="noopener"><b>Team Building</b><span>Group activities for any team</span></a>
+            <a href="dox.html"><b>Develop SOPs &amp; How-To Videos</b><span>Owners &amp; operations heads</span></a>
+            <a href="blog.html"><b>Blogs</b><span>Hospitality insights &amp; guides</span></a>
+            <a href="training-by-role.html" style="color:#e31e24;font-weight:700;text-align:left;border-top:1px solid #eee;margin-top:6px;padding-top:10px;">Find training by role &rarr;</a>
+          </div>
+        </div>
+        <a href="contact.html" class="nav-contact">Contact Us</a>
+      </nav>
+    </div>
+    <div class="scroll-progress" id="scrollProgress"></div>
+  </header>
+
+<main>
+
+<!-- Somebody who searched "food cost calculator" already knows what one is.
+     The hero used to be a headline, a three-line lede, a formula plate, a
+     button and a line of small print, which is a full screen of reading before
+     the tool. It is now a title and one line; the calculator starts directly
+     under it, and everything that explains it sits below the calculator. -->
+<section class="hero hero-slim">
+  <div class="hero-inner">
+    <span class="hero-tag">Free tool from HTI India</span>
+    <h1>Free Food Cost <em>Calculator</em></h1>
+    <!-- The answer to "what is food cost", in the first screen and in plain
+         text, because that is where search engines look for a quotable
+         definition. Currency-free on purpose: it has to be true everywhere. -->
+    <p class="hero-lede"><b>Food cost % = ingredient cost &divide; menu price &times; 100.</b> A dish that costs 30 to make and sells for 100 has a 30% food cost, in any currency.</p>
+  </div>
+</section>
+
+<div class="fcc-wrap">
+
+  <!-- ============ THE CALCULATOR ITSELF ============
+       Same formula, same bands and the same optional overhead as fcc-app.html,
+       for one portion. The card below is the upsell to the full tool, which does
+       a whole recipe, many units and a batch yield. -->
+  <section class="qcalc" id="calculator" aria-labelledby="qcalcH">
+    <div class="sec-head qc-head">
+      <h2 id="qcalcH">Work out your <em>food cost percentage</em></h2>
+      <p>Free, no sign-up, in your own currency. Enter what a portion costs you and what you charge for it &mdash; for restaurants, hotels, cafes, cloud kitchens and bakeries.</p>
+    </div>
+
+    <div class="qc-grid">
+      <div class="qc-form">
+        <div class="qc-fld qc-cur">
+          <label for="qcCur">Currency</label>
+          <select id="qcCur">
+            <option value="INR">&#8377; Indian rupee (INR)</option>
+            <option value="USD">$ US dollar (USD)</option>
+            <option value="EUR">&euro; Euro (EUR)</option>
+            <option value="GBP">&pound; British pound (GBP)</option>
+            <option value="AED">UAE dirham (AED)</option>
+            <option value="SAR">Saudi riyal (SAR)</option>
+            <option value="QAR">Qatari riyal (QAR)</option>
+            <option value="AUD">Australian dollar (AUD)</option>
+            <option value="CAD">Canadian dollar (CAD)</option>
+            <option value="NZD">New Zealand dollar (NZD)</option>
+            <option value="SGD">Singapore dollar (SGD)</option>
+            <option value="MYR">Malaysian ringgit (MYR)</option>
+            <option value="PHP">Philippine peso (PHP)</option>
+            <option value="IDR">Indonesian rupiah (IDR)</option>
+            <option value="THB">Thai baht (THB)</option>
+            <option value="JPY">Japanese yen (JPY)</option>
+            <option value="ZAR">South African rand (ZAR)</option>
+            <option value="NGN">Nigerian naira (NGN)</option>
+            <option value="KES">Kenyan shilling (KES)</option>
+            <option value="PKR">Pakistani rupee (PKR)</option>
+            <option value="BDT">Bangladeshi taka (BDT)</option>
+            <option value="LKR">Sri Lankan rupee (LKR)</option>
+            <option value="NPR">Nepalese rupee (NPR)</option>
+          </select>
+        </div>
+        <div class="qc-fld">
+          <label for="qcCost">Ingredient cost of one portion</label>
+          <span class="qc-affix"><span class="pre" data-cur>&#8377;</span><input type="number" id="qcCost" min="0" step="any" inputmode="decimal" value="120" placeholder="120" /></span>
+        </div>
+        <div class="qc-fld">
+          <label for="qcPrice">Menu price for one portion</label>
+          <span class="qc-affix"><span class="pre" data-cur>&#8377;</span><input type="number" id="qcPrice" min="0" step="any" inputmode="decimal" value="400" placeholder="400" /></span>
+          <p class="qc-hint">Use the price before tax &mdash; GST, VAT or sales tax. Tax is not your money.</p>
+        </div>
+        <div class="qc-fld">
+          <label for="qcOh">Overhead <em>optional</em><button class="qc-hlp" type="button" id="qcOhHelp" aria-expanded="false" aria-controls="qcOhNote" aria-label="What counts as overhead?">?</button></label>
+          <span class="qc-affix suf"><input type="number" id="qcOh" min="0" max="99" step="any" inputmode="decimal" placeholder="0" /><span class="post">%</span></span>
+          <p class="qc-hint">Gas, electricity and packaging, as a % of the menu price.</p>
+          <p class="qc-note" id="qcOhNote" hidden>What it costs to cook and serve the portion on top of the ingredients. Always a percentage, never a rupee amount, because a rupee figure is wrong the moment you change the price. Most kitchens sit around 4% to 8%. Your food cost % stays ingredients only; this comes off the profit.</p>
+        </div>
+      </div>
+
+      <div class="qc-out">
+        <span class="qc-cap">Your food cost</span>
+        <div class="qc-big" id="qcPct">&mdash;</div>
+        <div class="qc-verdict" id="qcVerdict" role="status" aria-live="polite">Enter a cost and a price.</div>
+        <div class="qc-bar" aria-hidden="true">
+          <i class="f" id="qcBarF" style="width:0%"></i><i class="o" id="qcBarO" style="width:0%"></i><i class="p" id="qcBarP" style="width:0%"></i>
+        </div>
+        <ul class="qc-lines" id="qcLines"></ul>
+      </div>
+    </div>
+
+    <div class="qc-more">
+      <p>Costing a real recipe &mdash; ten ingredients, mixed units, a batch that makes twelve portions?</p>
+      <a class="qc-cta" href="fcc-app.html">Open the full calculator &rarr;</a>
+      <b>Free, runs on your phone, and you log in only when you want the costings kept.</b>
+    </div>
+  </section>
+
+</div>
+
+<div class="fcc-wrap">
+  <section class="learn">
+    <div class="sec-head">
+      <span class="sec-tag">Benchmarks</span>
+      <h2>What counts as a <em>good food cost</em>?</h2>
+      <p>Where your number should land, and what it is telling you if it does not. These ranges hold for most restaurants worldwide.</p>
+    </div>
+    <div class="bands">
+      <div class="band why-item t-good"><i>&#10003;</i><b>Under 25%</b><span>Very profitable. Check your portions are not too small.</span></div>
+      <div class="band why-item t-good"><i>&#10003;</i><b>25&ndash;35%</b><span>The normal, healthy range for most restaurants.</span></div>
+      <div class="band why-item t-warn"><i>!</i><b>35&ndash;40%</b><span>Tight. Watch your wastage and supplier rates.</span></div>
+      <div class="band why-item t-bad"><i>&#10005;</i><b>Over 40%</b><span>You are barely making money on this dish.</span></div>
+    </div>
+  </section>
+</div>
+
+<div class="fcc-wrap">
+  <section class="method">
+    <div class="sec-head">
+      <span class="sec-tag">The maths</span>
+      <h2>How to work out <em>food cost percentage</em></h2>
+      <p>Simple enough to do on the back of a docket, and worth doing before you print a menu.</p>
+    </div>
+    <div class="method-body why-item">
+      <p>Work from the whole batch, not from one portion. Take each ingredient at the rate you actually buy it,
+        divide by the pack size, then multiply by the quantity the recipe uses. Chicken bought at &#8377;280 a kilo,
+        with 800 g going into the pot, costs you &#8377;280 &divide; 1000 &times; 800 = <b>&#8377;224</b> on that line.</p>
+
+      <div class="worked">
+        <div class="worked-head">A biryani batch that serves four</div>
+        <ul>
+          <li><span>Chicken, 800 g at &#8377;280/kg</span><b>&#8377;224</b></li>
+          <li><span>Basmati rice, 600 g at &#8377;120/kg</span><b>&#8377;72</b></li>
+          <li><span>Curd, onion and tomato, 500 g at &#8377;70/kg</span><b>&#8377;35</b></li>
+          <li><span>Ghee, whole spices and saffron</span><b>&#8377;49</b></li>
+          <li class="sum"><span>Whole batch</span><b>&#8377;380</b></li>
+          <li><span>Cost of one portion (&#8377;380 &divide; 4)</span><b>&#8377;95</b></li>
+          <li><span>Menu price per portion, before GST</span><b>&#8377;320</b></li>
+          <li class="answer"><span>Food cost (&#8377;95 &divide; &#8377;320 &times; 100)</span><b>29.7%</b></li>
+        </ul>
+      </div>
+
+      <p>Add every line to get the batch cost, then divide by the number of portions the batch actually yields.
+        Divide that portion cost by the menu price, multiply by 100, and you have your percentage. The example is in
+        rupees, but the maths is the same in dollars, pounds, euros or dirhams. Against the bands
+        above, 29.7% is healthy, and it leaves &#8377;225 a portion towards labour, rent, gas and profit.</p>
+
+      <p>Two things quietly ruin the number. Cost what you <b>buy</b>, not what reaches the plate &mdash; if 800 g of
+        raw chicken trims down to 600 g cooked, the trim is still money you spent. And re-run the sum whenever a
+        supplier rate moves: chicken going from &#8377;280 to &#8377;320 a kilo pushes this dish from 29.7% to 32.2%
+        on its own, and takes &#8377;8 a portion off what you keep.</p>
+
+      <p>The calculator does this arithmetic for every dish you enter, keeps the working, and updates the percentage the
+        moment you change a rate or a price.</p>
+    </div>
+  </section>
+</div>
+
+<div class="fcc-wrap">
+  <section class="method period" id="monthly-food-cost" aria-labelledby="periodH">
+    <div class="sec-head">
+      <span class="sec-tag">For the whole kitchen</span>
+      <h2 id="periodH">How to calculate food cost for a <em>week or month</em></h2>
+      <p>The per-dish number tells you what a plate should cost. This one tells you what the kitchen actually spent.</p>
+    </div>
+    <div class="method-body why-item">
+      <div class="formula" role="note">
+        <span>Food cost % =</span>
+        <b>(Opening inventory + Purchases &minus; Closing inventory) &divide; Food sales &times; 100</b>
+      </div>
+      <p>Count your stock on the first day of the period, add everything you bought during it, and subtract what is
+        still on the shelves at the end. What is left is the food you actually used, sometimes called the cost of goods
+        sold. Divide it by your food sales for the same period, before tax, and multiply by 100.</p>
+
+      <div class="qc-grid pc-grid">
+        <div class="qc-form">
+          <div class="qc-fld">
+            <label for="pcOpen">Opening inventory</label>
+            <span class="qc-affix"><span class="pre" data-cur>&#8377;</span><input type="number" id="pcOpen" min="0" step="any" inputmode="decimal" value="50000" /></span>
+          </div>
+          <div class="qc-fld">
+            <label for="pcBuy">Purchases during the period</label>
+            <span class="qc-affix"><span class="pre" data-cur>&#8377;</span><input type="number" id="pcBuy" min="0" step="any" inputmode="decimal" value="200000" /></span>
+          </div>
+          <div class="qc-fld">
+            <label for="pcClose">Closing inventory</label>
+            <span class="qc-affix"><span class="pre" data-cur>&#8377;</span><input type="number" id="pcClose" min="0" step="any" inputmode="decimal" value="40000" /></span>
+          </div>
+          <div class="qc-fld">
+            <label for="pcSales">Food sales, before tax</label>
+            <span class="qc-affix"><span class="pre" data-cur>&#8377;</span><input type="number" id="pcSales" min="0" step="any" inputmode="decimal" value="650000" /></span>
+          </div>
+        </div>
+        <div class="qc-out">
+          <span class="qc-cap">Food cost for the period</span>
+          <div class="qc-big" id="pcPct">&mdash;</div>
+          <div class="qc-verdict" id="pcVerdict" role="status" aria-live="polite">Enter your stock, purchases and sales.</div>
+          <ul class="qc-lines" id="pcLines"></ul>
+        </div>
+      </div>
+
+      <div class="worked">
+        <div class="worked-head">A month in one kitchen</div>
+        <ul>
+          <li><span>Opening inventory</span><b>50,000</b></li>
+          <li><span>+ Purchases during the month</span><b>200,000</b></li>
+          <li><span>&minus; Closing inventory</span><b>40,000</b></li>
+          <li class="sum"><span>Food actually used</span><b>210,000</b></li>
+          <li><span>Food sales for the month, before tax</span><b>650,000</b></li>
+          <li class="answer"><span>Food cost (210,000 &divide; 650,000 &times; 100)</span><b>32.3%</b></li>
+        </ul>
+      </div>
+
+      <h3>Ideal food cost against actual food cost</h3>
+      <p>Your <b>ideal</b> food cost is what the recipes say a dish should cost, the per-dish number from the calculator
+        at the top of this page. Your <b>actual</b> food cost is the monthly figure above. The two are never identical,
+        but if actual runs several points above ideal, that money is going somewhere: wastage, portions that drift
+        bigger, staff meals, items given away, theft, or supplier prices that rose without the menu price following.
+        Run both every month and the gap tells you where to look.</p>
+    </div>
+  </section>
+</div>
+
+<div class="fcc-wrap">
+
+  <!-- ============ CALCULATOR GATEWAY ============
+       The costing itself lives at fcc-app.html. This page keeps the teaching
+       and the schema; this card is the one thing it asks you to do. -->
+  <section class="app-gate" id="appGate">
+    <div class="ag-inner">
+      <span class="ag-tag">The tool</span>
+      <h2>Cost your dishes <em>in the calculator</em></h2>
+      <p class="ag-lede">Free for everyone and works on your phone. Cost a dish the moment it opens &mdash; an account is only how your dishes get saved.</p>
+
+      <a href="fcc-app.html" class="ag-cta">Open the Food Cost Calculator</a>
+
+      <ul class="ag-list">
+        <li class="why-item"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>Cost as many dishes as you like without an account</li>
+        <li class="why-item"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>See your food cost % against industry benchmarks</li>
+        <li class="why-item"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>Install it on your phone and use it in the kitchen</li>
+        <li class="why-item"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>Log in with a code we email you &mdash; then every dish is saved</li>
+      </ul>
+
+      <p class="ag-fine">Free to use. No card, and no sign-up to get started.</p>
+    </div>
+  </section>
+
+</div>
+
+<section class="faq-band">
+  <div class="fcc-wrap">
+    <div class="sec-head">
+      <span class="sec-tag">Questions</span>
+      <h2>Frequently asked <em>questions</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">What is food cost?<span class="sign">&#8964;</span></button>
+        <div class="faq-answer"><div><p>Food cost is the money you spend on the ingredients for a dish, and <b>food cost percentage</b> is that money shown as a share of what you charge. If a portion costs 120 to make and sells for 400, your food cost is 30%. The other 70% pays for staff, rent, energy and your profit.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">Is food cost the same as food expenses?<span class="sign">&#8964;</span></button>
+        <div class="faq-answer"><div><p>In a restaurant, mostly yes. <b>Food expenses</b> usually means the same thing as food cost: the money you spend on ingredients. Food cost percentage shows those expenses as a share of your food sales &mdash; spend 30,000 on ingredients against 100,000 of food sales and your food cost is 30%. Staff, rent and energy are not food expenses; they are operating costs, and they are kept out so the number can be compared from month to month.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">What is a good food cost percentage?<span class="sign">&#8964;</span></button>
+        <div class="faq-answer"><div><p>For most restaurants a healthy food cost is <b>25% to 35%</b>. Under 25% is very profitable, but check your portion is not too small for what you charge. Between 35% and 40% is a bit high, and above 40% the dish is barely paying for itself. Fine dining and bars usually run lower, buffets and quick-service restaurants higher, so compare yourself against your own format rather than a single number.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">How do you calculate food cost percentage?<span class="sign">&#8964;</span></button>
+        <div class="faq-answer"><div><p>Divide what the ingredients cost you by what you charge, then multiply by 100. <b>Ingredient cost &divide; Menu price &times; 100 = food cost %</b>. A portion that costs 120 and sells at 400 is 120 &divide; 400 &times; 100, which is 30%. Use the menu price before tax, and cost the whole batch rather than guessing a single portion.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">What is the food cost formula for a month?<span class="sign">&#8964;</span></button>
+        <div class="faq-answer"><div><p><b>(Opening inventory + Purchases &minus; Closing inventory) &divide; Food sales &times; 100</b>. Opening stock of 50,000 plus 200,000 of purchases, minus 40,000 left at the end, means you used 210,000 of food. Against 650,000 of food sales, that is a 32.3% food cost for the month.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">What is the difference between ideal and actual food cost?<span class="sign">&#8964;</span></button>
+        <div class="faq-answer"><div><p>Ideal food cost is what your recipes say the food should cost. Actual food cost is what your stock count and purchases show you really spent. The gap between them is wastage, over-portioning, staff meals, giveaways, theft or supplier price rises, so a growing gap is the first sign something in the kitchen needs attention.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">How do I bring my food cost percentage down?<span class="sign">&#8964;</span></button>
+        <div class="faq-answer"><div><p>In this order, because that is the order that actually works: fix your portion sizes so every plate leaves the pass the same, cut the wastage and the trim you are throwing away, re-negotiate the two or three ingredients that make up most of the cost, and only then raise the price. Re-run the costing whenever a supplier rate moves &mdash; chicken going from &#8377;280 to &#8377;320 a kilo can move a dish two or three points on its own.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">Is this food cost calculator really free?<span class="sign">&#8964;</span></button>
+        <div class="faq-answer"><div><p>Yes. The calculator on this page and the full one behind it are both free, with no sign-up and no trial. You only make an account if you want your costings saved and synced to your phone, and even that is free.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">Does it work in dollars, pounds, euros or dirhams?<span class="sign">&#8964;</span></button>
+        <div class="faq-answer"><div><p>Yes. Pick your currency above the calculator &mdash; it covers more than 20, from US dollars, euros and pounds to dirhams, riyals, rand and rupees. Food cost is a percentage, so the formula and the healthy ranges are the same in every country.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">How do I enter an ingredient I buy by the kilo?<span class="sign">&#8964;</span></button>
+        <div class="faq-answer"><div><p>In the calculator, enter the rate you buy at &mdash; say 400 per kg &mdash; then how much you actually use, say 1 kg for the batch. It works out the cost of that line for you. You can mix units freely: buy per kg and use grams, buy per litre and use millilitres.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">My recipe makes a batch, not one portion. What do I enter?<span class="sign">&#8964;</span></button>
+        <div class="faq-answer"><div><p>Cost the whole batch &mdash; all the chicken, all the butter, everything that goes in the pot &mdash; then say how many portions it serves. The calculator divides it and shows the cost of one portion. This is how professional kitchens cost, and it is far more accurate than guessing a single portion.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">Do I include gas, staff salary and rent?<span class="sign">&#8964;</span></button>
+        <div class="faq-answer"><div><p>Not in the food cost itself. Food cost is only the ingredients, and keeping salaries and rent out is what makes the number comparable from dish to dish. Gas and electricity are a little different, because they are spent cooking that particular portion, so the calculator has an optional <b>Overhead %</b> field for them. Enter them as a percentage of the menu price &mdash; most kitchens are around 4% to 8% &mdash; and it comes off your profit per portion while your food cost percentage stays ingredients only.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">Should I use the menu price with tax or without?<span class="sign">&#8964;</span></button>
+        <div class="faq-answer"><div><p>Without. GST, VAT or sales tax is not your money &mdash; you collect it and pass it on. Using the price with tax will make your food cost look better than it really is.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false">Where are my saved dishes kept?<span class="sign">&#8964;</span></button>
+        <div class="faq-answer"><div><p>The calculator is free to use without an account. If you are not logged in, your dishes stay in this browser on this device only: we never receive them and cannot see them, and clearing your browser data will remove them. Log in &mdash; with a one-time code we email you &mdash; and they move to your account, where you can open them on any device. Only your own account can read them, because our database is set up so one account cannot see another account&rsquo;s dishes.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="fcc-wrap">
+  <section class="fcc-blog">
+    <div class="sec-head">
+      <span class="sec-tag">From the blog</span>
+      <h2>What a plate of <em>butter chicken</em> really costs</h2>
+      <p>The same worked example in English and in Hindi &mdash; ingredient by ingredient in rupees, and the three costing errors that make most food cost numbers wrong.</p>
+    </div>
+    <div class="fcc-blog-grid">
+      <a class="fcc-blog-card" href="how-to-calculate-food-cost-percentage.html">
+        <img src="images/blog/food-cost-percentage/01-butter-chicken-plate-food-cost.jpg"
+          alt="A plate of butter chicken, the dish costed line by line in the blog"
+          width="1400" height="788" loading="lazy" decoding="async" />
+        <div class="fcc-blog-body">
+          <span class="fcc-blog-lang">English</span>
+          <h3>What Your Butter Chicken Actually Costs You</h3>
+          <p>&#8377;172 of ingredients, four percent of chutney and trim nobody costs, and the five point gap between your recipe card and your P&amp;L.</p>
+          <span class="fcc-blog-more">Read the blog &rarr;</span>
+        </div>
+      </a>
+      <a class="fcc-blog-card" href="food-cost-kaise-nikale.html" hreflang="hi">
+        <img src="images/blog/food-cost-percentage/04-ladle-portion-control-kitchen.jpg"
+          alt="A cook pouring gravy from a ladle on a busy kitchen pass"
+          width="1376" height="768" loading="lazy" decoding="async" />
+        <div class="fcc-blog-body">
+          <span class="fcc-blog-lang" lang="hi">&#2361;&#2367;&#2306;&#2342;&#2368;</span>
+          <h3 lang="hi">&#2310;&#2346;&#2325;&#2368; &#2348;&#2335;&#2352; &#2330;&#2367;&#2325;&#2344; &#2309;&#2360;&#2354; &#2350;&#2375;&#2306; &#2310;&#2346;&#2325;&#2379; &#2325;&#2367;&#2340;&#2344;&#2375; &#2325;&#2368; &#2346;&#2337;&#2364;&#2340;&#2368; &#2361;&#2376;?</h3>
+          <p lang="hi">&#2357;&#2361;&#2368; &#2361;&#2367;&#2360;&#2366;&#2348;, &#2361;&#2367;&#2306;&#2342;&#2368; &#2350;&#2375;&#2306;&#2404; &#8377;172 &#2325;&#2375; ingredients, &#2330;&#2366;&#2352; &#2346;&#2381;&#2352;&#2340;&#2367;&#2358;&#2340; &#2330;&#2335;&#2344;&#2368; &#2324;&#2352; &#2331;&#2368;&#2354;&#2344;, &#2324;&#2352; recipe &#2324;&#2352; P&amp;L &#2325;&#2375; &#2348;&#2368;&#2330; &#2325;&#2366; &#2346;&#2366;&#2305;&#2330; &#2346;&#2381;&#2352;&#2340;&#2367;&#2358;&#2340; &#2325;&#2366; &#2347;&#2364;&#2352;&#2381;&#2325;&#2364;&#2404;</p>
+          <span class="fcc-blog-more" lang="hi">&#2348;&#2381;&#2354;&#2377;&#2327; &#2346;&#2338;&#2364;&#2375;&#2306; &rarr;</span>
+        </div>
+      </a>
+    </div>
+    <ul class="fcc-more">
+      <li><a href="restaurant-menu-engineering-cricket-team.html">If Your Menu Was a Cricket Team<span>Menu engineering: which dishes to promote, fix or cut, using portions sold and profit per portion</span></a></li>
+      <li><a href="restaurant-food-cost-loss-leader.html">The Biryani Can Lose Money. The Raita Can&rsquo;t.<span>When a low food cost on the extras pays for a loss-leader dish</span></a></li>
+      <li><a href="restaurant-cost-calculator.html">Restaurant Cost Calculator<span>Prime cost, profit and break-even for the whole restaurant</span></a></li>
+    </ul>
+  </section>
+</div>
+
+<div class="fcc-wrap">
+  <section class="fcc-cta na-card">
+    <div>
+      <h2>Your team can learn to do this every single day</h2>
+      <p>HTI trains kitchen and restaurant teams in costing, portion control and wastage &mdash; on your property, in your language.</p>
+    </div>
+    <a href="contact.html" class="btn btn-red">Speak with our team</a>
+  </section>
+</div>
+
+</main>
+
+  <div data-subscribe data-source="calculator"></div>
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>HTI</h4>
+          <a href="about.html">About Us</a>
+          <a href="trainers.html">Our Trainers</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="training-needs-survey.html">Training Needs Survey</a>
+        </div>
+        <div class="footer-col">
+          <h4>Programs</h4>
+          <a href="restaurants.html">Restaurants &amp; QSRs</a>
+          <a href="hotels.html">Hotels</a>
+          <a href="offices.html">Offices</a>
+        </div>
+        <div class="footer-col">
+          <h4>More</h4>
+          <a href="brands.html">Our Brands</a>
+          <a href="https://wooshbiz.com/" target="_blank" rel="noopener">Team Building</a>
+          <a href="lead.html">Lead by HTI</a>
+          <a href="leadership-development.html">Leadership Development</a>
+          <a href="professional-etiquette.html">Professional Etiquette</a>
+          <a href="posh-training.html">POSH Training</a>
+          <a href="fssai-training.html">FSSAI Training</a>
+          <a href="dox.html">Develop SOPs &amp; How-To Videos</a>
+          <a href="blog.html">Blogs</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="food-cost-calculator.html">Food Cost Calculator</a>
+          <a href="restaurant-cost-calculator.html">Restaurant Cost Calculator</a>
+        </div>
+      </div>
+      <div class="footer-div"></div>
+      <div class="footer-bottom">
+        <div class="footer-social">
+          <a href="https://www.facebook.com/hti.india/" target="_blank" aria-label="Facebook"><svg viewBox="0 0 24 24"
+              fill="currentColor">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669c1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg></a>
+          <a href="https://www.instagram.com/hti.india/" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24"
+              fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M12 2c-2.716 0-3.056.012-4.123.06c-1.064.049-1.791.218-2.427.465a4.901 4.901 0 0 0-1.772 1.153A4.902 4.902 0 0 0 2.525 5.45c-.247.636-.416 1.363-.465 2.427C2.011 8.944 2 9.284 2 12s.011 3.056.06 4.123c.049 1.064.218 1.791.465 2.427a4.903 4.903 0 0 0 1.153 1.772a4.903 4.903 0 0 0 1.772 1.153c.636.247 1.363.416 2.427.465c1.067.048 1.407.06 4.123.06s3.056-.012 4.123-.06c1.064-.049 1.791-.218 2.427-.465a4.902 4.902 0 0 0 1.772-1.153a4.902 4.902 0 0 0 1.153-1.772c.247-.636.416-1.363.465-2.427c.048-1.067.06-1.407.06-4.123s-.012-3.056-.06-4.123c-.049-1.064-.218-1.791-.465-2.427a4.902 4.902 0 0 0-1.153-1.772a4.901 4.901 0 0 0-1.772-1.153c-.636-.247-1.363-.416-2.427-.465C15.056 2.012 14.716 2 12 2m0 1.802c2.67 0 2.986.01 4.04.058c.976.045 1.505.207 1.858.344c.466.182.8.399 1.15.748c.35.35.566.684.748 1.15c.136.353.3.882.344 1.857c.048 1.055.058 1.37.058 4.041c0 2.67-.01 2.986-.058 4.04c-.045.976-.208 1.505-.344 1.858a3.1 3.1 0 0 1-.748 1.15c-.35.35-.684.566-1.15.748c-.353.136-.882.3-1.857.344c-1.054.048-1.37.058-4.041.058c-2.67 0-2.987-.01-4.04-.058c-.976-.045-1.505-.208-1.858-.344a3.098 3.098 0 0 1-1.15-.748a3.098 3.098 0 0 1-.748-1.15c-.137-.353-.3-.882-.344-1.857c-.048-1.055-.058-1.37-.058-4.041c0-2.67.01-2.986.058-4.04c.045-.976.207-1.505.344-1.858c.182-.466.399-.8.748-1.15c.35-.35.684-.566 1.15-.748c.353-.137.882-.3 1.857-.344c1.055-.048 1.37-.058 4.041-.058m0 11.531a3.333 3.333 0 1 1 0-6.666a3.333 3.333 0 0 1 0 6.666m0-8.468a5.135 5.135 0 1 0 0 10.27a5.135 5.135 0 0 0 0-10.27m6.538-.203a1.2 1.2 0 1 1-2.4 0a1.2 1.2 0 0 1 2.4 0" />
+            </svg></a>
+          <a href="https://www.linkedin.com/company/hospitality-training-institute-india-pvt-ltd" target="_blank"
+            aria-label="LinkedIn"><svg viewBox="0 0 32 32" fill="currentColor">
+              <path
+                d="M26.2 4H5.8C4.8 4 4 4.8 4 5.7v20.5c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V5.7c0-.9-.8-1.7-1.8-1.7zM11.1 24.4H7.6V13h3.5v11.4zm-1.7-13c-1.1 0-2.1-.9-2.1-2.1c0-1.2.9-2.1 2.1-2.1c1.1 0 2.1.9 2.1 2.1s-1 2.1-2.1 2.1zm15.1 12.9H21v-5.6c0-1.3 0-3.1-1.9-3.1S17 17.1 17 18.5v5.7h-3.5V13h3.3v1.5h.1c.5-.9 1.7-1.9 3.4-1.9c3.6 0 4.3 2.4 4.3 5.5v6.2z" />
+            </svg></a>
+          <a href="https://www.youtube.com/c/Hti-india" target="_blank" aria-label="YouTube"><svg viewBox="0 0 24 24"
+              fill="currentColor">
+              <path
+                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+            </svg></a>
+        </div>
+        <div class="footer-contact"><a href="contact.html">
+            <h3>Contact Us: <span>+91 77380 60902</span></h3>
+          </a></div>
+        <a href="index.html" class="footer-brand"><img loading="lazy" decoding="async" width="240" height="182"
+            src="images/brand/hti-logo-nav.webp"
+            alt="HTI" /></a>
+      </div>
+      <div class="footer-copy">&#169;&#65039; HOSPITALITY TRAINING INSTITUTE INDIA PRIVATE. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+/* ---------- Mobile nav ---------- */
+    (function () {
+      const toggle = document.getElementById('navToggle');
+      const menu = document.getElementById('navMenu');
+
+      /* one source of truth for the open state, so the panel, the
+         hamburger-to-cross animation and the ARIA state always agree */
+      function setNav(open) {
+        menu.classList.toggle('open', open);
+        toggle.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        if (!open) {
+          menu.querySelectorAll('.nav-item.open').forEach(i => i.classList.remove('open'));
+        }
+      }
+
+      toggle.addEventListener('click', () => setNav(!menu.classList.contains('open')));
+
+      /* Escape, or a tap outside the panel, also closes it */
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && menu.classList.contains('open')) setNav(false);
+      });
+      document.addEventListener('click', (e) => {
+        if (window.innerWidth <= 960 && menu.classList.contains('open') &&
+          !menu.contains(e.target) && !toggle.contains(e.target)) setNav(false);
+      });
+      document.querySelectorAll('.nav-item').forEach(item => {
+        item.addEventListener('click', (e) => {
+          if (window.innerWidth <= 960 && (e.target === item || e.target.classList.contains('caret'))) {
+            item.classList.toggle('open');
+          }
+        });
+      });
+      /* tapping any nav link closes the menu - matters for links that open
+         in a new tab and so never navigate this page away */
+      menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          setNav(false);
+        });
+      });
+    })();
+
+    /* ---------- Scroll progress line under the navbar ---------- */
+    (function () {
+      const bar = document.getElementById('scrollProgress');
+      const navbar = document.querySelector('.navbar');
+      let ticking = false;
+
+      function update() {
+        ticking = false;
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        const y = window.scrollY || window.pageYOffset;
+        const ratio = max > 0 ? Math.min(Math.max(y / max, 0), 1) : 0;
+        bar.style.transform = `scaleX(${ratio})`;
+        navbar.classList.toggle('scrolled', y > 4);
+      }
+
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(update);
+        }
+      }, { passive: true });
+      window.addEventListener('resize', update, { passive: true });
+      window.addEventListener('orientationchange', update);
+      /* mobile browsers resize the viewport when the URL bar hides/shows */
+      if (window.visualViewport) {
+        window.visualViewport.addEventListener('resize', update);
+      }
+      window.addEventListener('load', update);
+      update();
+    })();
+  </script>
+
+  <script>
+    /* ---------- the on-page calculator ----------
+       One portion, so no batch and no units: cost in, price in, percentage out.
+       The bands and the overhead rule are the same ones fcc-app.html uses, so
+       a visitor never sees two different verdicts for the same numbers. */
+    (function () {
+      var cost = document.getElementById('qcCost'),
+          price = document.getElementById('qcPrice'),
+          oh = document.getElementById('qcOh');
+      if (!cost || !price || !oh) return;
+
+      var pctEl = document.getElementById('qcPct'),
+          vEl = document.getElementById('qcVerdict'),
+          bF = document.getElementById('qcBarF'),
+          bO = document.getElementById('qcBarO'),
+          bP = document.getElementById('qcBarP'),
+          lines = document.getElementById('qcLines');
+
+      /* ---------- currency ----------
+         Food cost is a ratio, so the currency only changes the labels and the
+         sample numbers. The first visit guesses from the time zone (India has
+         one, and many Indian browsers report en-US as their language), then
+         from the browser's region; a choice the visitor makes is kept. */
+      var CUR = {
+        INR: ['en-IN', 120, 400], USD: ['en-US', 3, 10], EUR: ['de-DE', 3, 10], GBP: ['en-GB', 3, 10],
+        AED: ['en-AE', 12, 40], SAR: ['en-SA', 12, 40], QAR: ['en-QA', 12, 40], AUD: ['en-AU', 5, 16],
+        CAD: ['en-CA', 4, 13], NZD: ['en-NZ', 5, 16], SGD: ['en-SG', 4, 13], MYR: ['en-MY', 12, 40],
+        PHP: ['en-PH', 150, 500], IDR: ['id-ID', 30000, 100000], THB: ['th-TH', 90, 300],
+        JPY: ['ja-JP', 300, 1000], ZAR: ['en-ZA', 45, 150], NGN: ['en-NG', 3000, 10000],
+        KES: ['en-KE', 300, 1000], PKR: ['en-PK', 300, 1000], BDT: ['en-BD', 150, 500],
+        LKR: ['en-LK', 900, 3000], NPR: ['en-NP', 150, 500]
+      };
+      var REGION = { IN: 'INR', US: 'USD', GB: 'GBP', AE: 'AED', SA: 'SAR', QA: 'QAR', AU: 'AUD',
+        CA: 'CAD', NZ: 'NZD', SG: 'SGD', MY: 'MYR', PH: 'PHP', ID: 'IDR', TH: 'THB', JP: 'JPY',
+        ZA: 'ZAR', NG: 'NGN', KE: 'KES', PK: 'PKR', BD: 'BDT', LK: 'LKR', NP: 'NPR',
+        DE: 'EUR', FR: 'EUR', ES: 'EUR', IT: 'EUR', NL: 'EUR', IE: 'EUR', PT: 'EUR', BE: 'EUR',
+        AT: 'EUR', FI: 'EUR', GR: 'EUR' };
+      var curSel = document.getElementById('qcCur');
+      var code = 'INR';
+      function guessCur() {
+        try {
+          var saved = localStorage.getItem('hti_fcc_currency');
+          if (saved && CUR[saved]) return saved;
+        } catch (e) {}
+        try {
+          var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+          if (/^Asia\/(Kolkata|Calcutta)$/.test(tz)) return 'INR';
+        } catch (e) {}
+        var langs = navigator.languages || [navigator.language || ''];
+        for (var i = 0; i < langs.length; i++) {
+          var r = (langs[i].split('-')[1] || '').toUpperCase();
+          if (REGION[r]) return REGION[r];
+        }
+        return 'USD';
+      }
+      function symbol(c) {
+        try {
+          var p = new Intl.NumberFormat(CUR[c][0], { style: 'currency', currency: c }).formatToParts(0);
+          for (var i = 0; i < p.length; i++) if (p[i].type === 'currency') return p[i].value;
+        } catch (e) {}
+        return c;
+      }
+      function rupees(n) {
+        try {
+          return n.toLocaleString(CUR[code][0], { style: 'currency', currency: code, minimumFractionDigits: 0, maximumFractionDigits: 2 });
+        } catch (e) {
+          return code + ' ' + n.toFixed(2);
+        }
+      }
+      /* sample numbers follow the currency only until the visitor types */
+      var touched = false;
+      [cost, price].forEach(function (i) { i.addEventListener('input', function () { touched = true; }); });
+      function setCur(c, fromUser) {
+        code = c;
+        curSel.value = c;
+        var sym = symbol(c);
+        document.querySelectorAll('[data-cur]').forEach(function (el) {
+          el.textContent = sym;
+          var input = el.nextElementSibling;
+          if (input) input.style.paddingLeft = (el.offsetWidth + 21) + 'px';
+        });
+        if (!touched) { cost.value = CUR[c][1]; price.value = CUR[c][2]; }
+        if (fromUser) { try { localStorage.setItem('hti_fcc_currency', c); } catch (e) {} }
+        run();
+        document.dispatchEvent(new CustomEvent('fcc-currency'));
+      }
+      window.HTIFoodCostMoney = function (n) { return rupees(n); };
+      function num(input, max) {
+        var v = parseFloat(input.value);
+        if (!isFinite(v) || v < 0) return 0;
+        return (max && v > max) ? max : v;
+      }
+      function row(label, value, cls) {
+        var li = document.createElement('li');
+        if (cls) li.className = cls;
+        var a = document.createElement('span'); a.textContent = label;
+        var b = document.createElement('b'); b.textContent = value;
+        li.appendChild(a); li.appendChild(b);
+        return li;
+      }
+
+      function run() {
+        var c = num(cost), p = num(price), o = num(oh, 99);
+
+        lines.textContent = '';
+        if (!(c > 0) || !(p > 0)) {
+          pctEl.innerHTML = '&mdash;';
+          pctEl.style.color = '#fff';
+          vEl.style.color = 'rgba(255,255,255,.6)';
+          vEl.textContent = 'Enter a cost and a price.';
+          bF.style.width = bO.style.width = bP.style.width = '0%';
+          return;
+        }
+
+        var pct = c / p * 100,
+            ohRs = p * o / 100,
+            gross = p - c,
+            profit = gross - ohRs,
+            col, msg;
+
+        if (pct < 25)        { col = '#4ade80'; msg = 'Very profitable. Check the portion is not too small.'; }
+        else if (pct <= 35)  { col = '#4ade80'; msg = 'Healthy. This is the normal range.'; }
+        else if (pct <= 40)  { col = '#f4b942'; msg = 'A bit high. Look at portion size and wastage.'; }
+        else                 { col = '#ff6b6b'; msg = 'Too high. The dish is barely paying for itself.'; }
+        if (gross < 0)       { col = '#ff6b6b'; msg = 'You are losing money on this dish.'; }
+        else if (profit < 0) { col = '#ff6b6b'; msg = 'Nothing left once overhead is paid.'; }
+
+        pctEl.innerHTML = pct.toFixed(1) + '<small>%</small>';
+        pctEl.style.color = col;
+        vEl.style.color = col;
+        vEl.textContent = msg;
+
+        var f = Math.max(0, Math.min(100, pct));
+        var ob = Math.max(0, Math.min(100 - f, o));
+        bF.style.width = f + '%';
+        bO.style.width = ob + '%';
+        bP.style.width = (100 - f - ob) + '%';
+
+        lines.appendChild(row('Ingredients', rupees(c)));
+        if (o > 0) lines.appendChild(row('Overhead at ' + (Math.round(o * 10) / 10) + '%', rupees(ohRs)));
+        lines.appendChild(row(o > 0 ? 'Profit per portion after overhead' : 'Profit per portion', rupees(profit), 'key'));
+      }
+
+      [cost, price, oh].forEach(function (i) { i.addEventListener('input', run); });
+      curSel.addEventListener('change', function () { setCur(curSel.value, true); });
+
+      var help = document.getElementById('qcOhHelp'), note = document.getElementById('qcOhNote');
+      if (help && note) {
+        help.addEventListener('click', function () {
+          var open = note.hidden;
+          note.hidden = !open;
+          help.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      }
+
+      setCur(guessCur(), false);
+    })();
+  </script>
+
+  <script>
+    /* ---------- food cost for a period ----------
+       Same bands as the per-dish calculator; money is formatted by the
+       per-dish calculator's currency, so the two never disagree. */
+    (function () {
+      var ids = ['pcOpen', 'pcBuy', 'pcClose', 'pcSales'];
+      var f = ids.map(function (id) { return document.getElementById(id); });
+      if (f.some(function (x) { return !x; })) return;
+      var pctEl = document.getElementById('pcPct'),
+          vEl = document.getElementById('pcVerdict'),
+          lines = document.getElementById('pcLines');
+      function money(n) {
+        return window.HTIFoodCostMoney ? window.HTIFoodCostMoney(n) : n.toLocaleString();
+      }
+      function val(x) { var v = parseFloat(x.value); return isFinite(v) && v > 0 ? v : 0; }
+      function row(label, value, cls) {
+        var li = document.createElement('li');
+        if (cls) li.className = cls;
+        var a = document.createElement('span'); a.textContent = label;
+        var b = document.createElement('b'); b.textContent = value;
+        li.appendChild(a); li.appendChild(b);
+        return li;
+      }
+      function run() {
+        var used = val(f[0]) + val(f[1]) - val(f[2]), sales = val(f[3]);
+        lines.textContent = '';
+        if (!(sales > 0) || used < 0) {
+          pctEl.innerHTML = '&mdash;';
+          pctEl.style.color = '#fff';
+          vEl.style.color = 'rgba(255,255,255,.6)';
+          vEl.textContent = used < 0 ? 'Closing stock is more than you had and bought. Check the numbers.'
+                                     : 'Enter your stock, purchases and sales.';
+          return;
+        }
+        var pct = used / sales * 100, col, msg;
+        if (pct < 25)       { col = '#4ade80'; msg = 'Very low. Check the stock count and that sales are food only.'; }
+        else if (pct <= 35) { col = '#4ade80'; msg = 'Healthy. This is the normal range.'; }
+        else if (pct <= 40) { col = '#f4b942'; msg = 'A bit high. Compare it with your recipe costs.'; }
+        else                { col = '#ff6b6b'; msg = 'Too high. Look for wastage, portions and price rises.'; }
+        pctEl.innerHTML = pct.toFixed(1) + '<small>%</small>';
+        pctEl.style.color = col;
+        vEl.style.color = col;
+        vEl.textContent = msg;
+        lines.appendChild(row('Food actually used', money(used)));
+        lines.appendChild(row('Food sales', money(sales)));
+        lines.appendChild(row('Left after food', money(sales - used), 'key'));
+      }
+      f.forEach(function (x) { x.addEventListener('input', run); });
+      document.addEventListener('fcc-currency', run);
+      run();
+    })();
+  </script>
+
+  <script>
+    /* ---------- FAQ accordion ---------- */
+    (function () {
+      var list = document.querySelector('.faq-list');
+      if (!list) return;
+      list.querySelectorAll('.faq-q').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var item = btn.parentElement, was = item.classList.contains('open');
+          list.querySelectorAll('.faq-item').forEach(function (i) {
+            i.classList.remove('open');
+            i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+          });
+          if (!was) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+        });
+      });
+    })();
+  </script>
+  <script src="assets/subscribe.js" defer></script>
+  <script src="assets/track.js" defer></script>
+</body>
+
+</html>
