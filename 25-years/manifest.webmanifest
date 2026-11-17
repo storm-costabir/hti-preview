@@ -1,0 +1,31 @@
+{
+  "name": "HTI Food Cost Calculator",
+  "short_name": "Food Cost",
+  "description": "Free food cost calculator. Cost your dishes, track your food cost % and see where your margin is going.",
+  "start_url": "/fcc-app.html",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#e31e24",
+  "icons": [
+    {
+      "src": "/images/app/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/app/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/app/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
